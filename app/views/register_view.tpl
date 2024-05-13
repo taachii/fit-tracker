@@ -1,7 +1,11 @@
 {extends file="auth.tpl"}
 
-{block name=bodyclass}{/block}
 {block name=form}
+  {if $msgs->isError()}
+  <div class="messages alert alert-danger">
+        {include file="messages.tpl"}
+  </div>
+  {/if}
   <h4 class="text-center mb-4">Rejestracja</h4>
   <form action="{$conf->action_root}register" method="post">
     <div class="form-group">
@@ -40,9 +44,4 @@
   <div class="new-account mt-3">
     <p>Masz już konto? <a class="text-primary" href="{$conf->action_root}view_login">Zaloguj się</a></p>
   </div>
-  {if $msgs->isError()}
-    <div class="messages alert alert-danger">
-        {include file="messages.tpl"}
-    </div>
-    {/if}
 {/block}

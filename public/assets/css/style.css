@@ -3993,6 +3993,7 @@ input[type="button"].btn-block {
 .alert-danger {
   color: #850b0b;
   background-color: #ffd0d0;
+  margin-bottom: 2em;
   border-color: #ffbebe; }
   .alert-danger hr {
     border-top-color: #ffa5a5; }

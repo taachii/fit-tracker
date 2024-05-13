@@ -78,4 +78,12 @@ class Utils {
         return App::getConf()->action_root . self::_url_maker_noclean($action, $params);
     }
 
+    public static function debugToConsole($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+    
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+    }
+
 }

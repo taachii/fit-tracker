@@ -54,7 +54,7 @@
                         <ul class="navbar-nav header-right">
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                   [username] <i class="mdi mdi-account"></i>
+                                   {$user['username']} <i class="mdi mdi-account"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="./app-profile.html" class="dropdown-item">
@@ -87,7 +87,7 @@
                     <ul class="metismenu" id="menu">
                         <li class="nav-label first">Menu</li>
                         <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                    class="icon icon-single-04"></i><span class="nav-text">[username]</span></a>
+                                    class="icon icon-single-04"></i><span class="nav-text">{$user['username']}</span></a>
                             <ul aria-expanded="false">
                                 <li><a href="#.html">Mój profil</a></li>
                                 <li><a href="{$conf->action_root}logout">Wyloguj</a></li>
@@ -107,7 +107,7 @@
                         <li><a href="javascript:void()" aria-expanded="false">
                             <i class="icon icon-users-mm"></i><span class="nav-text">Nasi trenerzy</span></a>
                         </li>
-                        {if true}
+                        {if $isAdmin}
                         <li class="nav-label">Administracja</li>
                         <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon icon-settings"></i><span class="nav-text">Ustawienia</span></a>

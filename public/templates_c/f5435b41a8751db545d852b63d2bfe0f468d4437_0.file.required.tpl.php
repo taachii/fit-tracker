@@ -1,0 +1,36 @@
+<?php
+/* Smarty version 4.3.4, created on 2024-05-13 14:07:06
+  from 'D:\xampp\htdocs\fit-tracker\app\views\templates\required.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.4',
+  'unifunc' => 'content_6642026abe1bb1_59056110',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'f5435b41a8751db545d852b63d2bfe0f468d4437' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\templates\\required.tpl',
+      1 => 1715002112,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6642026abe1bb1_59056110 (Smarty_Internal_Template $_smarty_tpl) {
+echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/vendor/global/global.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/js/quixnav-init.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/assets/js/custom.min.js"><?php echo '</script'; ?>
+><?php }
+}

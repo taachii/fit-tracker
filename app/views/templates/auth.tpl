@@ -3,7 +3,7 @@
 <head>
     {include file="head.tpl"}
 </head>
-<body {block name=bodyclass}class="auth"{/block}>
+<body>
 <div class="title">
   <h1 class="auth-header">Fit<span class="tracker-text">Tracker</span></h1>
 </div>

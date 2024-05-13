@@ -1,6 +1,11 @@
 {extends file="auth.tpl"}
 
 {block name=form}
+  {if $msgs->isError()}
+  <div class="alert alert-danger">
+      {include file="messages.tpl"}
+  </div>
+  {/if}
   <h4 class="text-center mb-4">Logowanie</h4>
   <form action="{$conf->action_root}login" method="post">
     <div class="form-group">
@@ -18,9 +23,4 @@
   <div class="new-account mt-3">
     <p>Nie masz konta? <a class="text-primary" href="{$conf->action_root}view_register">Zarejestruj się</a></p>
   </div>
-  {if $msgs->isError()}
-  <div class="alert alert-danger">
-      {include file="messages.tpl"}
-  </div>
-  {/if}
 {/block}

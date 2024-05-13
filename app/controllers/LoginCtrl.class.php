@@ -5,6 +5,7 @@ namespace app\controllers;
 use core\App;
 use core\Utils;
 use core\RoleUtils;
+use core\SessionUtils;
 use core\Validator;
 use app\forms\LoginForm;
 
@@ -19,6 +20,8 @@ class LoginCtrl {
   }
 
   private function validate() {
+
+    // Walidacja pod kątem formularza
     $this->form->email = $this->validator->validateFromRequest("email", [
       'trim' => true,
       'email' => true,
@@ -31,11 +34,34 @@ class LoginCtrl {
       'required' => true,
       'required_message' => "Nie podano hasła!"
     ]);
-    
-    // TODO: walidacja pod kątem bazy danych
 
-    return !App::getMessages()->isError();
+    if(App::getMessages()->isError()) {
+      return false;
+    }
     
+    // Walidacja pod kątem bazy danych
+    try {
+      $record = App::getDB()->get("user", "*", [
+        "email" => $this->form->email
+      ]);
+
+      if(!$record) {
+        Utils::addErrorMessage("Użytkownik o podanym adresie e-mail nie istnieje!");
+        return false;
+      }
+
+      $hashed_pass = $record["password"];
+     
+      if(!password_verify($this->form->pass, $hashed_pass)) {
+        Utils::addErrorMessage("Wprowadzono niepoprawne hasło!");
+      }
+    } catch(\PDOException $e) {
+      Utils::addErrorMessage("Wystąpił błąd odczytu lub zapisu rekordu!");
+      if(App::getConf()->debug) {
+        Utils::addErrorMessage($e->getMessage());
+      }
+    }
+    return !App::getMessages()->isError();
   }
 
   private function generateView() {
@@ -49,6 +75,30 @@ class LoginCtrl {
 
   public function action_login() {
     if($this->validate()) {
+      $user = App::getDB()->get("user", "*", [
+        "email" => $this->form->email
+      ]);
+
+      try {
+        $user_id = $user["idUser"];
+
+        $role_id = App::getDB()->get("rolelog", "idRole", [
+          "idUser" => $user_id
+        ]);
+
+        $role_name = App::getDB()->get("role", "roleName", [
+          "idRole" => $role_id
+        ]);
+
+        RoleUtils::addRole($role_name);
+        SessionUtils::store("user", $user);
+
+      } catch(\PDOException $e) {
+        Utils::addErrorMessage("Wystąpił błąd odczytu lub zapisu rekordu!");
+        if(App::getConf()->debug) {
+          Utils::addErrorMessage($e->getMessage());
+        }
+      }
       App::getRouter()->redirectTo('view_home');
     } else {
       $this->generateView();

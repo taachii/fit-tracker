@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use core\App;
 use core\Utils;
+use core\RoleUtils;
+use core\SessionUtils;
 use core\Validator;
 use app\forms\RegisterForm;
 
@@ -18,13 +20,15 @@ class RegisterCtrl {
   }
 
   private function validate() {
+
+    // Walidacja pod kątem formularza
     $this->form->username = $this->validator->validateFromRequest("username", [
       'trim' => true,
       'required' => true,
       'required_message' => 'Nie podano nazwy użytkownika!',
-      'min_length' => 5,
-      'max_length' => 20,
-      'validator_message' => 'Nazwa użytkownika powinna zawierać 5 - 20 znaków!'
+      'min_length' => 3,
+      'max_length' => 50,
+      'validator_message' => 'Nazwa użytkownika powinna zawierać 3 - 50 znaków!'
     ]);
 
     $this->form->email = $this->validator->validateFromRequest("email", [
@@ -56,9 +60,33 @@ class RegisterCtrl {
       'required_message' => "Nie podano rodzaju konta!"
     ]);
 
+    if(App::getMessages()->isError()) {
+      return false;
+    }
 
-    // TODO: walidacja pod kątem bazy danych
+    // Walidacja pod kątem bazy danych
+    try {
+      $record = App::getDB()->get("user", "*", [
+        "username" => $this->form->username
+      ]);
 
+      if($record) {
+        Utils::addErrorMessage("Istnieje już użytkownik o podanej nazwie!");
+      }
+
+      $record = App::getDB()->get("user", "*", [
+        "email" => $this->form->email
+      ]);
+
+      if($record) {
+        Utils::addErrorMessage("Istnieje już użytkownik z podanym adresem e-mail!");
+      }
+    } catch(\PDOException $e) {
+      Utils::addErrorMessage("Wystąpił błąd odczytu rekordu!");
+      if(App::getConf()->debug) {
+        Utils::addErrorMessage($e->getMessage());
+      }
+    }
     return !App::getMessages()->isError();
   }
 
@@ -73,11 +101,46 @@ class RegisterCtrl {
   
   public function action_register() {
     if($this->validate()) {
-      //TODO: dodaj uzytkownika do bazy danych
+      $hashed_pass = password_hash($this->form->pass, PASSWORD_DEFAULT);
+      
+      try {
+        // Zapis użytkownika
+        App::getDB()->insert("user", [
+          "username" => $this->form->username,
+          "email" => $this->form->email,
+          "password" => $hashed_pass
+        ]);
+
+        // Ustawienie roli użytkownikowi
+        $user = App::getDB()->get("user", "*", [
+          "email" => $this->form->email
+        ]);
+  
+        $user_id = $user["idUser"];
+
+        $role_id = ($this->form->acctype == 0) ? 2 : 3;  // 2 = trainee, 3 = trainer
+
+        App::getDB()->insert("rolelog", [
+          "idUser" => $user_id,
+          "idRole" => $role_id
+        ]);
+
+        $role_name = App::getDB()->get("role", "roleName", [
+          "idRole" => $role_id
+        ]);
+
+        RoleUtils::addRole($role_name);
+        SessionUtils::store("user", $user);
+
+      } catch(\PDOException $e) {
+        Utils::addErrorMessage("Wystąpił błąd odczytu lub zapisu rekordu!");
+        if(App::getConf()->debug) {
+          Utils::addErrorMessage($e->getMessage());
+        }
+      }
       App::getRouter()->redirectTo('view_home');
     } else {
       $this->generateView();
     }
   }
 }
-
