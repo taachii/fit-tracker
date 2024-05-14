@@ -3,7 +3,7 @@
 use core\App;
 use core\Utils;
 
-App::getRouter()->setDefaultRoute('view_login'); #default action
+App::getRouter()->setDefaultRoute('logout'); #default action
 App::getRouter()->setLoginRoute('view_error403'); #action to forward if no permissions
 
 # Sciezki zwiazane z uwierzytelnianiem
@@ -15,4 +15,4 @@ Utils::addRoute('register', 'RegisterCtrl');
 
 # Sciezki zwiazane z glowna czescia aplikacji
 Utils::addRoute('view_error403', 'HomeCtrl');
-Utils::addRoute('view_home', 'HomeCtrl');
+Utils::addRoute('view_home', 'HomeCtrl', ['admin', 'trainee', 'trainer']);
