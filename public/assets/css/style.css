@@ -226,7 +226,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   --primary: #593bdb;
   --secondary: #673BB7;
   --success: #7ED321;
-  --info: #50E3C2;
+  --info: #03E379;
   --warning: #FFAA16;
   --danger: #FF1616;
   --light: #f8f9fa;
@@ -2082,12 +2082,12 @@ fieldset:disabled a.btn {
 
 .btn-info {
   color: #212529;
-  background-color: #50E3C2;
-  border-color: #50E3C2; }
+  background-color: #03E379;
+  border-color: #03E379; }
   .btn-info:hover {
     color: #212529;
-    background-color: #2fdeb7;
-    border-color: #24dcb3; }
+    background-color: #01c66a;
+    border-color: #01c66a; }
   .btn-info:focus, .btn-info.focus {
     box-shadow: 0 0 0 0.2rem rgba(73, 199, 171, 0.5); }
   .btn-info.disabled, .btn-info:disabled {
