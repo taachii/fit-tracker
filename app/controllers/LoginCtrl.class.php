@@ -100,7 +100,8 @@ class LoginCtrl {
           Utils::addErrorMessage($e->getMessage());
         }
       }
-      App::getRouter()->redirectTo('view_home');
+      $action = (RoleUtils::inRole("admin") ? 'view_userList' : 'view_home');
+      App::getRouter()->redirectTo($action);
     } else {
       $this->generateView();
     }

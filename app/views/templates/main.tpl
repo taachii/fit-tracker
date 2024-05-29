@@ -102,7 +102,8 @@
                                 <li><a href="{$conf->action_root}view_roleList">Role</a></li>
                             </ul>
                         </li>
-                        {/if} 
+                        {/if}
+                        {if !$isAdmin} 
                         <li class="nav-label">Moje treningi</li>
                         <li><a href=".html" aria-expanded="false">
                             <i class="icon icon-app-store"></i><span class="nav-text">Notatki</span></a>
@@ -117,6 +118,7 @@
                         <li><a href="javascript:void()" aria-expanded="false">
                             <i class="icon icon-users-mm"></i><span class="nav-text">Nasi trenerzy</span></a>
                         </li>
+                        {/if}
                     </ul>
                 </div>
             </div>

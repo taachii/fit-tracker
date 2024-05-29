@@ -9,7 +9,7 @@
   <h4 class="text-center mb-4">Edycja Roli:</h4>
   <form action="{$conf->action_root}roleSave" method="post">
     <div class="form-group">
-      <label for="id_roleName"><strong>Nazwa użytkownika</strong></label>
+      <label for="id_roleName"><strong>Nazwa roli</strong></label>
       <input id="id_roleName" name="roleName" type="text" class="form-control" value="{$form->roleName|default:''}" placeholder="roleName">
     </div>
     <input type="hidden" name="idRole" value="{$form->idRole}">
