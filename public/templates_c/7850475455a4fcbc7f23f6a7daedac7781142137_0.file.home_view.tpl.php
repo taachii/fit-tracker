@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-05-14 14:47:32
+/* Smarty version 4.3.4, created on 2024-05-14 15:11:16
   from 'D:\xampp\htdocs\fit-tracker\app\views\home_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66435d6446e7d9_17783970',
+  'unifunc' => 'content_664362f49de7c3_75500493',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7850475455a4fcbc7f23f6a7daedac7781142137' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\home_view.tpl',
-      1 => 1715690851,
+      1 => 1715692275,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66435d6446e7d9_17783970 (Smarty_Internal_Template $_smarty_tpl) {
+function content_664362f49de7c3_75500493 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169068091266435d6446b3d4_59331300', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_864761535664362f49db2d5_65366239', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_169068091266435d6446b3d4_59331300 extends Smarty_Internal_Block
+class Block_864761535664362f49db2d5_65366239 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_169068091266435d6446b3d4_59331300',
+    0 => 'Block_864761535664362f49db2d5_65366239',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,7 +52,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       </div>
     </div>
     <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-      <a href="gowno">
+      <a href="profil">
         <button type="button" class="btn-lg btn-info">
           Nowa notatka
           <span class="btn-icon-right">

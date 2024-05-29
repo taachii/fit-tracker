@@ -93,6 +93,16 @@
                                 <li><a href="{$conf->action_root}logout">Wyloguj</a></li>
                             </ul>
                         </li>
+                        {if $isAdmin}
+                        <li class="nav-label">Administracja</li>
+                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon icon-settings"></i><span class="nav-text">Ustawienia</span></a>
+                            <ul aria-expanded="false">
+                                <li><a href="{$conf->action_root}view_userList">Użytkownicy</a></li>
+                                <li><a href="{$conf->action_root}view_roleList">Role</a></li>
+                            </ul>
+                        </li>
+                        {/if} 
                         <li class="nav-label">Moje treningi</li>
                         <li><a href=".html" aria-expanded="false">
                             <i class="icon icon-app-store"></i><span class="nav-text">Notatki</span></a>
@@ -107,16 +117,6 @@
                         <li><a href="javascript:void()" aria-expanded="false">
                             <i class="icon icon-users-mm"></i><span class="nav-text">Nasi trenerzy</span></a>
                         </li>
-                        {if $isAdmin}
-                        <li class="nav-label">Administracja</li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon icon-settings"></i><span class="nav-text">Ustawienia</span></a>
-                            <ul aria-expanded="false">
-                                <li><a href="./ui-accordion.html">Użytkownicy</a></li>
-                                <li><a href="./ui-alert.html">Role</a></li>
-                            </ul>
-                        </li>
-                        {/if} 
                     </ul>
                 </div>
             </div>

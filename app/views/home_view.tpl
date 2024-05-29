@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-      <a href="gowno">
+      <a href="profil">
         <button type="button" class="btn-lg btn-info">
           Nowa notatka
           <span class="btn-icon-right">

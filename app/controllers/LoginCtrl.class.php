@@ -83,7 +83,8 @@ class LoginCtrl {
         $user_id = $user["idUser"];
 
         $role_id = App::getDB()->get("rolelog", "idRole", [
-          "idUser" => $user_id
+          "idUser" => $user_id,
+          "removalDate" => NULL
         ]);
 
         $role_name = App::getDB()->get("role", "roleName", [
