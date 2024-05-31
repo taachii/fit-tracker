@@ -138,7 +138,7 @@ class RegisterCtrl {
           Utils::addErrorMessage($e->getMessage());
         }
       }
-      $action = (RoleUtils::inRole("admin") ? 'view_userList' : 'view_home');
+      $action = (RoleUtils::inRole("admin") ? 'view_userList' : 'view_noteList');
       App::getRouter()->redirectTo($action);
     } else {
       $this->generateView();

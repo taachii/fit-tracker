@@ -103,9 +103,8 @@
                             </ul>
                         </li>
                         {/if}
-                        {if !$isAdmin} 
-                        <li class="nav-label">Moje treningi</li>
-                        <li><a href=".html" aria-expanded="false">
+                        <li class="nav-label">Treningi</li>
+                        <li><a href="{$conf->action_root}view_noteList" aria-expanded="false">
                             <i class="icon icon-app-store"></i><span class="nav-text">Notatki</span></a>
                         </li>
                         <li><a href="#.html" aria-expanded="false">
@@ -118,7 +117,6 @@
                         <li><a href="javascript:void()" aria-expanded="false">
                             <i class="icon icon-users-mm"></i><span class="nav-text">Nasi trenerzy</span></a>
                         </li>
-                        {/if}
                     </ul>
                 </div>
             </div>

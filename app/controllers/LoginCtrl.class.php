@@ -50,6 +50,10 @@ class LoginCtrl {
         return false;
       }
 
+      if(!$record['isActive']) {
+        Utils::addErrorMessage("Twoje konto zostało dezaktywowane przez administratora.");
+      }
+
       $hashed_pass = $record["password"];
      
       if(!password_verify($this->form->pass, $hashed_pass)) {
@@ -100,7 +104,7 @@ class LoginCtrl {
           Utils::addErrorMessage($e->getMessage());
         }
       }
-      $action = (RoleUtils::inRole("admin") ? 'view_userList' : 'view_home');
+      $action = (RoleUtils::inRole("admin") ? 'view_userList' : 'view_noteList');
       App::getRouter()->redirectTo($action);
     } else {
       $this->generateView();
