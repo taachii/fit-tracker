@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-05-31 21:48:04
-  from 'D:\xampp\htdocs\fit-tracker\app\views\templates\auth.tpl' */
+/* Smarty version 4.3.4, created on 2024-06-01 15:42:04
+  from 'D:\xampp\htdocs\fit-tracker\app\views\templates\form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665a297471cf64_48531197',
+  'unifunc' => 'content_665b252c4ba256_02931522',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'b143c800f9c16b3b7c5fa99e18a587883e765669' => 
+    '3467728890548f33da26be53e2e4499a9eeeccd7' => 
     array (
-      0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\templates\\auth.tpl',
-      1 => 1717184875,
+      0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\templates\\form.tpl',
+      1 => 1717249292,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:required.tpl' => 1,
   ),
 ),false)) {
-function content_665a297471cf64_48531197 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665b252c4ba256_02931522 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -46,7 +46,7 @@ echo (($tmp = $_smarty_tpl->tpl_vars['cancelAction']->value ?? null)===null||$tm
             <div class="col-xl-12">
               <div class="auth-form">
               <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1986684855665a297471c360_13473315', 'form');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1609125035665b252c4b95c3_76458605', 'content');
 ?>
 
               </div>
@@ -67,13 +67,13 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1986684855665a2974
 </body>
 
 </html><?php }
-/* {block 'form'} */
-class Block_1986684855665a297471c360_13473315 extends Smarty_Internal_Block
+/* {block 'content'} */
+class Block_1609125035665b252c4b95c3_76458605 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
-  'form' => 
+  'content' => 
   array (
-    0 => 'Block_1986684855665a297471c360_13473315',
+    0 => 'Block_1609125035665b252c4b95c3_76458605',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -83,5 +83,5 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
               <?php
 }
 }
-/* {/block 'form'} */
+/* {/block 'content'} */
 }

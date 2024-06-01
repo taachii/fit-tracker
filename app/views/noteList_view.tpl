@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-      <a href="profil">
+      <a href="{$conf->action_root}noteAdd">
         <button type="button" class="btn-lg btn-info">
           Nowa notatka
           <span class="btn-icon-right">
@@ -31,20 +31,22 @@
           <div class="card-body">
             <ul>
               {foreach $n['entries'] as $e}
+              {strip}
               <li>
                 {$e['exerciseName']}: {$e['sets']} x {$e['reps']}
-                {if $e['typeName'] == 'isometric'}s{/if}
+                {if $e['typeName'] == 'isometric' || $e['typeName'] == 'aerobic'}s{/if}
               </li>
+              {/strip}
               {/foreach}
             </ul>
           </div>
           <div class="card-footer d-sm-flex justify-content-between">
             <div class="card-footer-link mb-4 mb-sm-0">
-              <p class="card-text text-dark d-inline">Dodano: {$n['creationDate']}</p>
+              <p class="card-text text-dark d-inline"><strong>Dodano:</strong> {$n['creationDate']}</p>
               </div>
               <div>
-                <a href="javascript:void()" class="btn btn-outline-info">Edytuj</a>
-                <a href="javascript:void()" class="btn btn-outline-danger">
+                <a href="{$conf->action_root}view_noteEdit/{$n['idTrainingNote']}" class="btn btn-outline-info">Edytuj</a>
+                <a href="{$conf->action_root}noteDelete/{$n['idTrainingNote']}" class="btn btn-outline-danger">
                   <i class="fa fa-trash color-danger"></i>
                 </a>
             </div>
@@ -54,6 +56,7 @@
     {/foreach}
     {else}
       <p>Nie masz jeszcze żadnych notatek...</p>
+      {*TODO: Wyświetlać tą informację za pomocą klasy Messages*}
     {/if}
   </div>
  </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-05-28 19:00:23
+/* Smarty version 4.3.4, created on 2024-06-01 16:09:05
   from 'D:\xampp\htdocs\fit-tracker\app\views\userEdit_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66560da796ca16_50117778',
+  'unifunc' => 'content_665b2b81e79f97_67568802',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c4ca2146d264058abbd93bd7d93f1afeeb2420f' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\userEdit_view.tpl',
-      1 => 1716915619,
+      1 => 1717248457,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_66560da796ca16_50117778 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665b2b81e79f97_67568802 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_91331564766560da795e446_85872525', 'form');
-$_smarty_tpl->inheritance->endChild($_smarty_tpl, "auth.tpl");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1468226195665b2b81e6bc06_04167392', 'content');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "form.tpl");
 }
-/* {block 'form'} */
-class Block_91331564766560da795e446_85872525 extends Smarty_Internal_Block
+/* {block 'content'} */
+class Block_1468226195665b2b81e6bc06_04167392 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
-  'form' => 
+  'content' => 
   array (
-    0 => 'Block_91331564766560da795e446_85872525',
+    0 => 'Block_1468226195665b2b81e6bc06_04167392',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -79,5 +79,5 @@ userSave" method="post">
 <?php
 }
 }
-/* {/block 'form'} */
+/* {/block 'content'} */
 }

@@ -41,6 +41,7 @@ class RoleEditCtrl {
 
   private function generateView() {
     App::getSmarty()->assign('form', $this->form);
+    App::getSmarty()->assign('cancelAction', "view_roleList");
     App::getSmarty()->display('roleEdit_view.tpl');
   }
 

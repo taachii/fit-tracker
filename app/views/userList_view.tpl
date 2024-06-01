@@ -49,7 +49,7 @@
               <td>{$u['editDate']|default: '&#8213'}</td>
               <td>{$u['idEditor']|default: '&#8213'}</td>
               <td>
-              <span>
+                <span>
                   <a href="{$conf->action_root}view_userEdit/{$u["idUser"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj">
                     <i class="fa fa-pencil"></i>
                   </a>

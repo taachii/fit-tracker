@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-05-31 20:33:56
+/* Smarty version 4.3.4, created on 2024-06-01 18:34:08
   from 'D:\xampp\htdocs\fit-tracker\app\views\noteList_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665a18142cd1b8_69558093',
+  'unifunc' => 'content_665b4d80241234_00708481',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26bef39b79965fc09b964cfbaacef5eb5ab0610e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\noteList_view.tpl',
-      1 => 1717180208,
+      1 => 1717258448,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665a18142cd1b8_69558093 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665b4d80241234_00708481 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_265634438665a18142c03d1_65753650', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_60765151665b4d80232af2_41745685', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_265634438665a18142c03d1_65753650 extends Smarty_Internal_Block
+class Block_60765151665b4d80232af2_41745685 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_265634438665a18142c03d1_65753650',
+    0 => 'Block_60765151665b4d80232af2_41745685',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,7 +52,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       </div>
     </div>
     <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-      <a href="profil">
+      <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+noteAdd">
         <button type="button" class="btn-lg btn-info">
           Nowa notatka
           <span class="btn-icon-right">
@@ -84,13 +85,10 @@ $_smarty_tpl->tpl_vars['e']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['e']->value) {
 $_smarty_tpl->tpl_vars['e']->do_else = false;
 ?>
-              <li>
-                <?php echo $_smarty_tpl->tpl_vars['e']->value['exerciseName'];?>
+              <li><?php echo $_smarty_tpl->tpl_vars['e']->value['exerciseName'];?>
 : <?php echo $_smarty_tpl->tpl_vars['e']->value['sets'];?>
- x <?php echo $_smarty_tpl->tpl_vars['e']->value['reps'];?>
-
-                <?php if ($_smarty_tpl->tpl_vars['e']->value['typeName'] == 'isometric') {?>s<?php }?>
-              </li>
+ x <?php echo $_smarty_tpl->tpl_vars['e']->value['reps'];
+if ($_smarty_tpl->tpl_vars['e']->value['typeName'] == 'isometric' || $_smarty_tpl->tpl_vars['e']->value['typeName'] == 'aerobic') {?>s<?php }?></li>
               <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
@@ -98,12 +96,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           </div>
           <div class="card-footer d-sm-flex justify-content-between">
             <div class="card-footer-link mb-4 mb-sm-0">
-              <p class="card-text text-dark d-inline">Dodano: <?php echo $_smarty_tpl->tpl_vars['n']->value['creationDate'];?>
+              <p class="card-text text-dark d-inline"><strong>Dodano:</strong> <?php echo $_smarty_tpl->tpl_vars['n']->value['creationDate'];?>
 </p>
               </div>
               <div>
-                <a href="javascript:void()" class="btn btn-outline-info">Edytuj</a>
-                <a href="javascript:void()" class="btn btn-outline-danger">
+                <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+view_noteEdit/<?php echo $_smarty_tpl->tpl_vars['n']->value['idTrainingNote'];?>
+" class="btn btn-outline-info">Edytuj</a>
+                <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+noteDelete/<?php echo $_smarty_tpl->tpl_vars['n']->value['idTrainingNote'];?>
+" class="btn btn-outline-danger">
                   <i class="fa fa-trash color-danger"></i>
                 </a>
             </div>
@@ -115,7 +117,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php } else { ?>
       <p>Nie masz jeszcze żadnych notatek...</p>
-    <?php }?>
+          <?php }?>
   </div>
  </div>
 <?php

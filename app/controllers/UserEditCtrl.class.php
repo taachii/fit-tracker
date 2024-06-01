@@ -36,8 +36,8 @@ class UserEditCtrl {
       'required' => true,
       'required_message' => 'Nie podano nazwy użytkownika!',
       'min_length' => 3,
-      'max_length' => 50,
-      'validator_message' => 'Nazwa użytkownika powinna zawierać 3 - 50 znaków!'
+      'max_length' => 45,
+      'validator_message' => 'Nazwa użytkownika powinna zawierać 3 - 45 znaków!'
     ]);
 
     $this->form->email = $this->validator->validateFromRequest("email", [
@@ -50,7 +50,7 @@ class UserEditCtrl {
 
     $this->form->idRole = $this->validator->validateFromRequest("idRole", [
       'required' => true,
-      'required_message' => "Nie podane roli!"
+      'required_message' => "Nie podano roli!"
     ]);
 
     return !App::getMessages()->isError();
@@ -58,6 +58,7 @@ class UserEditCtrl {
 
   private function generateView() {
     App::getSmarty()->assign('form', $this->form);
+    App::getSmarty()->assign('cancelAction', "view_userList");
     App::getSmarty()->display('userEdit_view.tpl');
   }
 
@@ -71,10 +72,11 @@ class UserEditCtrl {
           "user.idUser",
           "user.username",
           "user.email",
-          "role.idRole",
+          "rolelog.idRole",
           "role.roleName"
         ], [
-          "user.idUser" => $this->form->idUser
+          "user.idUser" => $this->form->idUser,
+          "rolelog.removalDate" => NULL
         ]);
         
         $this->form->idUser = $record["idUser"];

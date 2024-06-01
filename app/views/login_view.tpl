@@ -1,6 +1,6 @@
-{extends file="auth.tpl"}
+{extends file="form.tpl"}
 
-{block name=form}
+{block name=content}
   {if $msgs->isError()}
   <div class="alert alert-danger">
       {include file="messages.tpl"}
