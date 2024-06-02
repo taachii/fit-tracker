@@ -26,7 +26,10 @@ class NoteListCtrl {
         "noteTitle",
         "creationDate"
       ], [
-        "idUser" => $loggedUserId
+        "idUser" => $loggedUserId,
+        "ORDER" =>  [
+          "creationDate" => "DESC"
+        ]
       ]);
 
       foreach($this->notes as &$n) {
@@ -36,10 +39,11 @@ class NoteListCtrl {
         ], [
           "noteentry.sets",
           "noteentry.reps",
+          "noteentry.weight",
           "exercise.exerciseName",
           "type.typeName"
         ], [
-          "idTrainingNote" => $n["idTrainingNote"]
+          "idTrainingNote" => $n["idTrainingNote"],
         ]);
       }
     } catch(\PDOException $e) {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-01 19:01:04
+/* Smarty version 4.3.4, created on 2024-06-02 14:39:01
   from 'D:\xampp\htdocs\fit-tracker\app\views\noteEntryList_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665b53d088a513_39004373',
+  'unifunc' => 'content_665c67e5971be8_21650044',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2de2ae251a237e50dab6d41b233a443be1033512' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\noteEntryList_view.tpl',
-      1 => 1717261263,
+      1 => 1717331940,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_665b53d088a513_39004373 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665c67e5971be8_21650044 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
@@ -55,7 +55,8 @@ echo (($tmp = $_smarty_tpl->tpl_vars['cancelAction']->value ?? null)===null||$tm
         </div>
         <div class="col-sm-6 justify-content-sm-center mt-2 mt-sm-0 d-flex">
           <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-noteEntryAdd">
+noteEntryAdd/<?php echo $_smarty_tpl->tpl_vars['noteID']->value;?>
+">
             <button type="button" class="btn-lg btn-info">Nowy wpis
               <span class="btn-icon-right">
                 <i class="fa fa-plus color-info"></i>
@@ -71,6 +72,7 @@ noteEntryAdd">
               <th scope="col">ćwiczenie</th>
               <th scope="col">serie</th>
               <th scope="col">powtórzenia</th>
+              <th scope="col">obciążenie</th>
               <th scope="col">typ ćwiczenia</th>
               <th scope="col">akcja</th>
             </tr>
@@ -86,11 +88,14 @@ $_smarty_tpl->tpl_vars['e']->do_else = false;
           <tr><td><?php echo $_smarty_tpl->tpl_vars['e']->value['exerciseName'];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['e']->value['sets'];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['e']->value['reps'];?>
+</td><td><?php echo (($tmp = $_smarty_tpl->tpl_vars['e']->value['weight'] ?? null)===null||$tmp==='' ? '0' ?? null : $tmp);?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['e']->value['typeName'];?>
 </td><td><span><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-view_noteEntryEdit/<?php echo $_smarty_tpl->tpl_vars['e']->value["idNoteEntry"];?>
+view_noteEntryEdit/<?php echo $_smarty_tpl->tpl_vars['e']->value["idTrainingNote"];?>
+/<?php echo $_smarty_tpl->tpl_vars['e']->value["idNoteEntry"];?>
 " class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj"><i class="fa fa-pencil"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-noteEntryDelete/<?php echo $_smarty_tpl->tpl_vars['e']->value["idNoteEntry"];?>
+noteEntryDelete/<?php echo $_smarty_tpl->tpl_vars['e']->value["idTrainingNote"];?>
+/<?php echo $_smarty_tpl->tpl_vars['e']->value["idNoteEntry"];?>
 " class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń"><i class="fa fa-close"></i></a></span></td></tr>
           <?php
 }

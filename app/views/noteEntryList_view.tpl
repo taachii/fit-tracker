@@ -25,7 +25,7 @@
           <h4>Wpisy</h4>  
         </div>
         <div class="col-sm-6 justify-content-sm-center mt-2 mt-sm-0 d-flex">
-          <a href="{$conf->action_root}noteEntryAdd">
+          <a href="{$conf->action_root}noteEntryAdd/{$noteID}">
             <button type="button" class="btn-lg btn-info">Nowy wpis
               <span class="btn-icon-right">
                 <i class="fa fa-plus color-info"></i>
@@ -41,6 +41,7 @@
               <th scope="col">ćwiczenie</th>
               <th scope="col">serie</th>
               <th scope="col">powtórzenia</th>
+              <th scope="col">obciążenie</th>
               <th scope="col">typ ćwiczenia</th>
               <th scope="col">akcja</th>
             </tr>
@@ -53,13 +54,14 @@
               <td>{$e['exerciseName']}</td>
               <td>{$e['sets']}</td>
               <td>{$e['reps']}</td>
+              <td>{$e['weight']|default:'0'}</td>
               <td>{$e['typeName']}</td>
               <td>
                 <span>
-                  <a href="{$conf->action_root}view_noteEntryEdit/{$e["idNoteEntry"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj">
+                  <a href="{$conf->action_root}view_noteEntryEdit/{$e["idTrainingNote"]}/{$e["idNoteEntry"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj">
                     <i class="fa fa-pencil"></i>
                   </a>
-                  <a href="{$conf->action_root}noteEntryDelete/{$e["idNoteEntry"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń">
+                  <a href="{$conf->action_root}noteEntryDelete/{$e["idTrainingNote"]}/{$e["idNoteEntry"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń">
                     <i class="fa fa-close"></i>
                   </a>
                 </span>

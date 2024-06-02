@@ -24,7 +24,7 @@ class NoteEditCtrl {
   }
 
   private function validateSave() {
-    $this->form->idTrainingNote = ParamUtils::getFromRequest("idTrainingNote", true, "Błędne wywołanie aplikacji");
+    $this->form->idTrainingNote = ParamUtils::getFromRequest("idTrainingNote", true, "Błędne wywołanie aplikacji!");
 
     $this->form->noteTitle = $this->validator->validateFromRequest("noteTitle", [
       'trim' => true,
@@ -87,7 +87,7 @@ class NoteEditCtrl {
       } catch(\PDOException $e) {
         Utils::addErrorMessage("Wystąpił nieoczekiwany błąd podczas zapisu rekordu.");
         if(App::getConf()->debug) {
-          Utils::addErrorMessages($e->getMessage());
+          Utils::addErrorMessage($e->getMessage());
         }
       }
       $newNote = App::getDB()->get("trainingnote", [
@@ -95,8 +95,8 @@ class NoteEditCtrl {
       ], [
         "noteTitle" => $this->form->noteTitle
       ]);
-      $noteId = $newNote['idTrainingNote'];
-      App::getRouter()->redirectTo("view_noteEntryList/$noteId");
+      $noteID = $newNote['idTrainingNote'];
+      App::getRouter()->redirectTo("view_noteEntryList/$noteID");
     } else {
       $this->generateView();
     }

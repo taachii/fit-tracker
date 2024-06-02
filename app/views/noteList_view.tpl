@@ -24,17 +24,17 @@
     {if !empty($notes)}
     {foreach $notes as $n}
     <div class="col-xl-4 col-xxl-6 col-lg-6 col-sm-6 ">
-      <div class="card">
+      <div class="trainingNote card">
           <div class="card-header">
             <h5 class="card-title">{$n['noteTitle']}</h5>
           </div>
           <div class="card-body">
-            <ul>
+            <ul class="noteList">
               {foreach $n['entries'] as $e}
               {strip}
               <li>
-                {$e['exerciseName']}: {$e['sets']} x {$e['reps']}
-                {if $e['typeName'] == 'isometric' || $e['typeName'] == 'aerobic'}s{/if}
+                {$e['exerciseName']}: <strong>{$e['sets']} x {$e['reps']}
+                {if $e['typeName'] == 'isometric' || $e['typeName'] == 'aerobic'}s{/if}</strong>{if $e['weight'] > 0} <span style="color: #593bdb">[+{$e['weight']} kg]</span>{/if}
               </li>
               {/strip}
               {/foreach}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-01 16:09:05
+/* Smarty version 4.3.4, created on 2024-06-01 22:15:17
   from 'D:\xampp\htdocs\fit-tracker\app\views\userEdit_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665b2b81e79f97_67568802',
+  'unifunc' => 'content_665b81554371c6_98738716',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c4ca2146d264058abbd93bd7d93f1afeeb2420f' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\userEdit_view.tpl',
-      1 => 1717248457,
+      1 => 1717272916,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_665b2b81e79f97_67568802 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665b81554371c6_98738716 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1468226195665b2b81e6bc06_04167392', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1197065411665b81554285d3_14947938', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "form.tpl");
 }
 /* {block 'content'} */
-class Block_1468226195665b2b81e6bc06_04167392 extends Smarty_Internal_Block
+class Block_1197065411665b81554285d3_14947938 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1468226195665b2b81e6bc06_04167392',
+    0 => 'Block_1197065411665b81554285d3_14947938',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,7 +49,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
   </div>
   <?php }?>
-  <h4 class="text-center mb-4">Edycja użytkownika:</h4>
+  <div class="row mx-0 mb-4">
+    <div class="col-sm-6 p-md-0">
+      <h4>Edycja użytkownika</h4>
+    </div>
+    <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+      <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+    </div>
+  </div>
   <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 userSave" method="post">
     <div class="form-group">

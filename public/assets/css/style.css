@@ -3532,6 +3532,15 @@ input[type="button"].btn-block {
     .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
       color: #fff; }
 
+.trainingNote {
+  height: 30vh;
+  overflow: auto;
+}
+
+.noteList {
+  font-size: 1.15em;
+}
+
 .card {
   position: relative;
   display: flex;
@@ -8122,6 +8131,7 @@ a {
   align-items: center;
   text-align: center;
   margin: 3em;
+  margin-top: 8em;
  }
 
  .err {

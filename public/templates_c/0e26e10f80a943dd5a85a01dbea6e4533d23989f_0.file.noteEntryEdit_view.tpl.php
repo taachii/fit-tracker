@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-01 20:17:39
+/* Smarty version 4.3.4, created on 2024-06-02 14:31:59
   from 'D:\xampp\htdocs\fit-tracker\app\views\noteEntryEdit_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665b65c33b82f0_42076428',
+  'unifunc' => 'content_665c663f442832_11882919',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0e26e10f80a943dd5a85a01dbea6e4533d23989f' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\noteEntryEdit_view.tpl',
-      1 => 1717265856,
+      1 => 1717331285,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_665b65c33b82f0_42076428 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665c663f442832_11882919 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_895029926665b65c33a9bf5_04790988', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_980278525665c663f4328d7_70395067', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "form.tpl");
 }
 /* {block 'content'} */
-class Block_895029926665b65c33a9bf5_04790988 extends Smarty_Internal_Block
+class Block_980278525665c663f4328d7_70395067 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_895029926665b65c33a9bf5_04790988',
+    0 => 'Block_980278525665c663f4328d7_70395067',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -50,15 +50,15 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
   </div>
   <?php }?>
   <div class="row mx-0 mb-4">
-  <div class="col-sm-6 p-md-0">
-    <h4>Wpis do notatki</h4>
+    <div class="col-sm-6 p-md-0">
+      <h4>Wpis do notatki</h4>
+    </div>
+    <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+      <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+    </div>
   </div>
-  <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-    <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">
-      <i class="fa fa-arrow-left"></i>
-    </a>
-  </div>
-</div>
   <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 noteEntrySave" method="post">
     <div class="form-group">
@@ -77,6 +77,11 @@ noteEntrySave" method="post">
 " placeholder="12">
     </div>
     <div class="form-group">
+      <label for="id_weight"><strong>Obciążenie [kg]</strong></label>
+      <input id="id_weight" name="weight" type="number" step="0.5" min="0" class="form-control" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['form']->value->weight ?? null)===null||$tmp==='' ? '0' ?? null : $tmp);?>
+" placeholder="20">
+    </div>
+    <div class="form-group">
       <label for="id_type"><strong>Typ ćwiczenia</strong></label>
       <select name="idType" id="id_type" class="form-control">
         <option <?php if ($_smarty_tpl->tpl_vars['form']->value->idType == 1) {?>selected<?php }?> value="1" title="Ćwiczenia izometryczne to takie, gdzie mięśnie się napinają, ale nie poruszają, jak trzymanie się w jednej pozycji, na przykład deski (plank).">
@@ -90,8 +95,11 @@ noteEntrySave" method="post">
         </option>
       </select>
     </div>
-
     <input type="hidden" name="idNoteEntry" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->idNoteEntry;?>
+">
+    <input type="hidden" name="idExercise" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->idExercise;?>
+">
+    <input type="hidden" name="idTrainingNote" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->idTrainingNote;?>
 ">
     <div class="text-center mt-4">
       <button type="submit" class="btn btn-primary btn-block">Zapisz</button>

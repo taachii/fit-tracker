@@ -11,11 +11,11 @@ class NoteEntryListCtrl {
 
   private $entries;
   private $validator;
-  private $noteId;
+  private $noteID;
 
   public function __construct() {
     $this->validator = new Validator();
-    $this->noteId = $this->validator->validateFromCleanURL(1, [
+    $this->noteID = $this->validator->validateFromCleanURL(1, [
       "required" => true,
       "required_message" => "Błędne wywołanie aplikacji!"
     ]);
@@ -26,8 +26,9 @@ class NoteEntryListCtrl {
     App::getSmarty()->assign('isAdmin', RoleUtils::inRole('admin'));
     App::getSmarty()->assign('cancelAction', "view_noteList");
     App::getSmarty()->assign('entries', $this->entries);
+    App::getSmarty()->assign('noteID', $this->noteID);
     App::getSmarty()->display('noteEntryList_view.tpl');
-    Utils::debugToConsole($this->noteId);
+    Utils::debugToConsole($this->noteID);
   }
 
   public function action_view_noteEntryList() {
@@ -36,13 +37,15 @@ class NoteEntryListCtrl {
         "[>]exercise" => ["noteentry.idExercise" => "idExercise"],
         "[>]type" => ["exercise.idType" => "idType"]
       ], [
+        "noteentry.idTrainingNote",
         "noteentry.idNoteEntry",
         "noteentry.sets",
         "noteentry.reps",
+        "noteentry.weight",
         "exercise.exerciseName",
         "type.typeName"
       ], [
-        "idTrainingNote" => $this->noteId
+        "idTrainingNote" => $this->noteID
       ]);
     } catch(\PDOException $e) {
       Utils::addErrorMessage("Wystąpił błąd podczas pobierania rekordów!");

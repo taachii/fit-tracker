@@ -7,15 +7,15 @@
   </div>
   {/if}
   <div class="row mx-0 mb-4">
-  <div class="col-sm-6 p-md-0">
-    <h4>Wpis do notatki</h4>
+    <div class="col-sm-6 p-md-0">
+      <h4>Wpis do notatki</h4>
+    </div>
+    <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+      <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+    </div>
   </div>
-  <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-    <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">
-      <i class="fa fa-arrow-left"></i>
-    </a>
-  </div>
-</div>
   <form action="{$conf->action_root}noteEntrySave" method="post">
     <div class="form-group">
       <label for="id_exerciseName"><strong>Ćwiczenie</strong></label>
@@ -28,6 +28,10 @@
     <div class="form-group">
       <label for="id_reps"><strong>Liczba powtórzeń</strong></label>
       <input id="id_reps" name="reps" type="number" min="1" class="form-control" value="{$form->reps|default:''}" placeholder="12">
+    </div>
+    <div class="form-group">
+      <label for="id_weight"><strong>Obciążenie [kg]</strong></label>
+      <input id="id_weight" name="weight" type="number" step="0.5" min="0" class="form-control" value="{$form->weight|default:'0'}" placeholder="20">
     </div>
     <div class="form-group">
       <label for="id_type"><strong>Typ ćwiczenia</strong></label>
@@ -43,8 +47,9 @@
         </option>
       </select>
     </div>
-
     <input type="hidden" name="idNoteEntry" value="{$form->idNoteEntry}">
+    <input type="hidden" name="idExercise" value="{$form->idExercise}">
+    <input type="hidden" name="idTrainingNote" value="{$form->idTrainingNote}">
     <div class="text-center mt-4">
       <button type="submit" class="btn btn-primary btn-block">Zapisz</button>
     </div>

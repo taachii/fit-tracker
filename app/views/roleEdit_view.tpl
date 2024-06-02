@@ -6,7 +6,16 @@
         {include file="messages.tpl"}
   </div>
   {/if}
-  <h4 class="text-center mb-4">Edycja Roli:</h4>
+  <div class="row mx-0 mb-4">
+    <div class="col-sm-6 p-md-0">
+      <h4>Edycja roli</h4>
+    </div>
+    <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+      <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+    </div>
+  </div>
   <form action="{$conf->action_root}roleSave" method="post">
     <div class="form-group">
       <label for="id_roleName"><strong>Nazwa roli</strong></label>

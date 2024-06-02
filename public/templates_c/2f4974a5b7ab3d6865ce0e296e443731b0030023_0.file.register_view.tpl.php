@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-05-13 21:20:31
+/* Smarty version 4.3.4, created on 2024-06-01 22:21:45
   from 'D:\xampp\htdocs\fit-tracker\app\views\register_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_664267ff6eb3b2_76795333',
+  'unifunc' => 'content_665b82d9b26a56_52194893',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f4974a5b7ab3d6865ce0e296e443731b0030023' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\register_view.tpl',
-      1 => 1715628027,
+      1 => 1717248445,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_664267ff6eb3b2_76795333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665b82d9b26a56_52194893 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1244781171664267ff6de541_00847324', 'form');
-$_smarty_tpl->inheritance->endChild($_smarty_tpl, "auth.tpl");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_762075018665b82d9b199f5_66635691', 'content');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, "form.tpl");
 }
-/* {block 'form'} */
-class Block_1244781171664267ff6de541_00847324 extends Smarty_Internal_Block
+/* {block 'content'} */
+class Block_762075018665b82d9b199f5_66635691 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
-  'form' => 
+  'content' => 
   array (
-    0 => 'Block_1244781171664267ff6de541_00847324',
+    0 => 'Block_762075018665b82d9b199f5_66635691',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -94,5 +94,5 @@ view_login">Zaloguj się</a></p>
 <?php
 }
 }
-/* {/block 'form'} */
+/* {/block 'content'} */
 }
