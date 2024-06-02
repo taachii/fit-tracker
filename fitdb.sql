@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2024 at 11:12 PM
+-- Generation Time: Jun 02, 2024 at 02:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,6 +33,17 @@ CREATE TABLE `exercise` (
   `idType` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
+--
+-- Dumping data for table `exercise`
+--
+
+INSERT INTO `exercise` (`idExercise`, `exerciseName`, `idType`) VALUES
+(1, 'podciaganie podchwytem', 2),
+(2, 'pompki', 2),
+(3, 'plank', 1),
+(6, 'przysiad', 2),
+(7, 'podciąganie nachwytem', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -57,9 +68,21 @@ CREATE TABLE `noteentry` (
   `idNoteEntry` int(11) NOT NULL,
   `reps` int(11) NOT NULL,
   `sets` int(11) NOT NULL,
+  `weight` float DEFAULT NULL,
   `idExercise` int(11) NOT NULL,
   `idTrainingNote` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Dumping data for table `noteentry`
+--
+
+INSERT INTO `noteentry` (`idNoteEntry`, `reps`, `sets`, `weight`, `idExercise`, `idTrainingNote`) VALUES
+(1, 12, 3, 0, 1, 1),
+(2, 25, 3, 0, 2, 1),
+(3, 90, 3, NULL, 3, 1),
+(4, 12, 5, 0, 6, 1),
+(5, 5, 5, 0, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -123,29 +146,46 @@ CREATE TABLE `rolelog` (
 --
 
 INSERT INTO `rolelog` (`idRoleLog`, `assignmentDate`, `removalDate`, `idUser`, `idRole`) VALUES
-(1, '2024-05-13 14:36:41', NULL, 1, 1),
+(1, '2024-05-13 14:36:41', '2024-06-01 10:46:36', 1, 1),
 (2, '2024-05-13 14:50:10', '2024-05-28 17:08:04', 2, 2),
 (3, '2024-05-13 14:50:47', '2024-05-28 17:12:33', 3, 3),
 (4, '2024-05-13 14:51:32', NULL, 4, 2),
-(5, '2024-05-13 19:10:17', NULL, 5, 3),
+(5, '2024-05-13 19:10:17', '2024-06-01 10:46:30', 5, 3),
 (6, '2024-05-13 19:39:25', '2024-05-28 18:07:16', 6, 2),
-(7, '2024-05-14 12:37:44', NULL, 7, 2),
-(8, '2024-05-14 13:14:19', '2024-05-28 17:49:30', 8, 2),
-(9, '2024-05-27 19:20:26', '2024-05-28 17:24:10', 9, 1),
+(7, '2024-05-14 12:37:44', '2024-06-01 10:59:33', 7, 2),
 (12, '2024-05-28 17:08:04', '2024-05-28 17:10:26', 2, 3),
 (13, '2024-05-28 17:10:26', '2024-05-28 17:19:49', 2, 1),
 (14, '2024-05-28 17:12:33', '2024-05-28 17:49:37', 3, 3),
 (15, '2024-05-28 17:19:49', '2024-05-28 18:06:38', 2, 3),
-(16, '2024-05-28 17:24:11', '2024-05-28 17:49:08', 9, 2),
-(17, '2024-05-28 17:49:08', '2024-05-28 22:13:56', 9, 1),
-(18, '2024-05-28 17:49:30', NULL, 8, 2),
 (19, '2024-05-28 17:49:37', '2024-05-28 17:49:51', 3, 1),
 (20, '2024-05-28 17:49:51', '2024-05-28 18:06:33', 3, 3),
-(21, '2024-05-28 18:06:33', NULL, 3, 3),
+(21, '2024-05-28 18:06:33', '2024-06-01 10:53:23', 3, 3),
 (22, '2024-05-28 18:06:38', '2024-05-28 18:08:55', 2, 2),
-(23, '2024-05-28 18:07:16', NULL, 6, 2),
-(24, '2024-05-28 18:08:55', NULL, 2, 1),
-(25, '2024-05-28 22:13:56', NULL, 9, 2);
+(23, '2024-05-28 18:07:16', '2024-06-01 10:46:33', 6, 2),
+(24, '2024-05-28 18:08:55', '2024-06-01 10:44:39', 2, 1),
+(26, '2024-06-01 10:44:40', '2024-06-01 10:44:48', 2, 2),
+(27, '2024-06-01 10:44:49', '2024-06-01 10:44:57', 2, 1),
+(28, '2024-06-01 10:44:57', '2024-06-01 10:46:41', 2, 2),
+(29, '2024-06-01 10:46:30', NULL, 5, 3),
+(30, '2024-06-01 10:46:33', NULL, 6, 2),
+(31, '2024-06-01 10:46:36', '2024-06-01 10:53:41', 1, 1),
+(32, '2024-06-01 10:46:41', '2024-06-01 10:46:47', 2, 1),
+(33, '2024-06-01 10:46:47', '2024-06-01 10:46:52', 2, 2),
+(34, '2024-06-01 10:46:52', '2024-06-01 10:53:16', 2, 1),
+(39, '2024-06-01 10:53:16', '2024-06-01 10:54:25', 2, 2),
+(40, '2024-06-01 10:53:23', '2024-06-01 10:53:33', 3, 2),
+(41, '2024-06-01 10:53:33', NULL, 3, 3),
+(42, '2024-06-01 10:53:41', NULL, 1, 1),
+(43, '2024-06-01 10:54:25', '2024-06-01 10:54:30', 2, 2),
+(44, '2024-06-01 10:54:30', '2024-06-01 11:00:11', 2, 2),
+(45, '2024-06-01 10:59:33', '2024-06-01 11:00:43', 7, 1),
+(46, '2024-06-01 11:00:12', '2024-06-01 11:00:40', 2, 3),
+(47, '2024-06-01 11:00:40', '2024-06-01 11:22:26', 2, 2),
+(48, '2024-06-01 11:00:43', NULL, 7, 2),
+(49, '2024-06-01 11:22:26', '2024-06-01 11:41:15', 2, 1),
+(50, '2024-06-01 11:41:15', '2024-06-01 11:41:39', 2, 3),
+(51, '2024-06-01 11:41:39', '2024-06-01 11:46:09', 2, 1),
+(52, '2024-06-01 11:46:09', NULL, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -160,6 +200,13 @@ CREATE TABLE `trainingnote` (
   `idUser` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
+--
+-- Dumping data for table `trainingnote`
+--
+
+INSERT INTO `trainingnote` (`idTrainingNote`, `noteTitle`, `creationDate`, `idUser`) VALUES
+(1, 'FBW', '2024-06-02 11:57:00', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -168,9 +215,17 @@ CREATE TABLE `trainingnote` (
 
 CREATE TABLE `type` (
   `idType` int(11) NOT NULL,
-  `typeName` varchar(45) NOT NULL,
-  `repUnit` varchar(45) NOT NULL
+  `typeName` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Dumping data for table `type`
+--
+
+INSERT INTO `type` (`idType`, `typeName`) VALUES
+(1, 'izometryczne'),
+(2, 'izotoniczne'),
+(3, 'aerobowe');
 
 -- --------------------------------------------------------
 
@@ -195,15 +250,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`idUser`, `username`, `email`, `password`, `registrationDate`, `isActive`, `deactivationDate`, `editDate`, `idEditor`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$0rG7.9Ung1B1RSvnjYOZAeOIgbIU.0udx8KkL/gwDtYCDIZdOIHEa', '2024-05-13 14:34:55', 1, NULL, '2024-05-28 14:57:37', NULL),
-(2, 'ziutek12', 'ziutek@gmail.com', '$2y$10$Y3vRMX49n3LeeBS.2ZDGKeyLaqeK1KsGUrbkgiG0CzjUKBYEJKtjq', '2024-05-13 14:50:10', 1, NULL, '2024-05-28 22:13:39', 1),
-(3, 'stefek121', 'stefek@gmail.com', '$2y$10$rv1XsHt2.Mv8nmh62/1uI.cXWQQ..JIXvf6SFSAo2pLiJtj7jyjf2', '2024-05-13 14:50:47', 0, '2024-05-28 18:06:32', '2024-05-28 18:06:32', 1),
+(1, 'admin', 'admin@gmail.com', '$2y$10$0rG7.9Ung1B1RSvnjYOZAeOIgbIU.0udx8KkL/gwDtYCDIZdOIHEa', '2024-05-13 14:34:55', 1, NULL, '2024-06-01 10:46:36', 1),
+(2, 'ziutek1', 'ziutek@gmail.com', '$2y$10$Y3vRMX49n3LeeBS.2ZDGKeyLaqeK1KsGUrbkgiG0CzjUKBYEJKtjq', '2024-05-13 14:50:10', 1, NULL, '2024-06-01 10:54:25', 1),
+(3, 'stefek121', 'stefek@gmail.com', '$2y$10$rv1XsHt2.Mv8nmh62/1uI.cXWQQ..JIXvf6SFSAo2pLiJtj7jyjf2', '2024-05-13 14:50:47', 0, '2024-06-01 10:53:33', '2024-06-01 10:53:33', 1),
 (4, 'janusz3', 'janusz@123.com', '$2y$10$Em.KOzTcgSxPRG21PAktWOKqnYRQojVidg6m7GgQ7Uq8YrslovQ5W', '2024-05-13 14:51:32', 0, '2024-05-28 17:19:07', '2024-05-28 17:19:07', 1),
-(5, 'adam', 'adam@gmail.com', '$2y$10$JM0l6YxIKIc3WdQVFfoo/Oz3gfeMRI27PGXZvXhGXoFE4OBCBvL0K', '2024-05-13 19:10:17', 1, NULL, '2024-05-28 17:16:07', 2),
+(5, 'adam', 'adam@gmail.com', '$2y$10$JM0l6YxIKIc3WdQVFfoo/Oz3gfeMRI27PGXZvXhGXoFE4OBCBvL0K', '2024-05-13 19:10:17', 1, NULL, '2024-06-01 10:46:30', 1),
 (6, 'bartek15', 'bartek@b.com', '$2y$10$8O.CFWf0ie1i.SfaVIpaZumTykkCyrx.Napo9Ou7fsedzxdfYjv82', '2024-05-13 19:39:25', 1, NULL, '2024-05-28 18:08:39', 1),
-(7, 'fajnyuser', 'user@user.com', '$2y$10$KzwxLSPVd34IIUwgcmmvluIfBZe/IL2rTW/vD3Pswc1.O6fLMYA..', '2024-05-14 12:37:44', 1, NULL, '2024-05-28 14:57:37', NULL),
-(8, 'gosc4', 'gosc@gmail.com', '$2y$10$Vbzuozj0AdtKMMY5vgNzDuRRvdTHdyQxkXpzS0NiNzxQmkvCx37mm', '2024-05-14 13:14:19', 1, NULL, '2024-05-28 17:49:30', NULL),
-(9, 'mietek', 'admin2@gmail.com', '$2y$10$Ty5hnuRZGusVZBiXCQjRcuGOEE9YP/dxXvrzD/T6VPWJfdEz.7lqm', '2024-05-27 19:17:45', 1, NULL, '2024-05-28 22:13:56', 1);
+(7, 'fajnyuser', 'user@user.com', '$2y$10$KzwxLSPVd34IIUwgcmmvluIfBZe/IL2rTW/vD3Pswc1.O6fLMYA..', '2024-05-14 12:37:44', 1, NULL, '2024-06-01 10:59:33', 1);
 
 --
 -- Triggers `user`
@@ -305,7 +358,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `exercise`
 --
 ALTER TABLE `exercise`
-  MODIFY `idExercise` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idExercise` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `mentorship`
@@ -317,7 +370,7 @@ ALTER TABLE `mentorship`
 -- AUTO_INCREMENT for table `noteentry`
 --
 ALTER TABLE `noteentry`
-  MODIFY `idNoteEntry` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idNoteEntry` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -329,19 +382,19 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `rolelog`
 --
 ALTER TABLE `rolelog`
-  MODIFY `idRoleLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idRoleLog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `trainingnote`
 --
 ALTER TABLE `trainingnote`
-  MODIFY `idTrainingNote` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTrainingNote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
-  MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
