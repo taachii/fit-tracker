@@ -8152,6 +8152,10 @@ a {
   overflow: hidden;
  }
 
+ .form-header {
+  margin-top: 1.2em;
+ }
+
  .title {
   display: flex;
   justify-content: center;

@@ -2,11 +2,11 @@
 
 {block name=content}
   {if $msgs->isError()}
-  <div class="messages alert alert-danger">
-        {include file="messages.tpl"}
+  <div>
+    {include file="messages.tpl"}
   </div>
   {/if}
-  <div class="row mx-0 mb-4">
+  <div class="form-header row mx-0 mb-4">
     <div class="col-sm-6 p-md-0">
       <h4>Rola</h4>
     </div>

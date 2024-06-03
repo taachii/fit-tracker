@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-03 18:36:14
+/* Smarty version 4.3.4, created on 2024-06-03 19:37:31
   from 'D:\xampp\htdocs\fit-tracker\app\views\stats_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665df0feb19928_07057697',
+  'unifunc' => 'content_665dff5b18a390_29175309',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f9d9f0931dc3cbdf4e33d0a32431e684a388a83e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\stats_view.tpl',
-      1 => 1717432413,
+      1 => 1717436249,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665df0feb19928_07057697 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665dff5b18a390_29175309 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_853571411665df0feb00dd0_07933457', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1360296979665dff5b171182_85508042', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_853571411665df0feb00dd0_07933457 extends Smarty_Internal_Block
+class Block_1360296979665dff5b171182_85508042 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_853571411665df0feb00dd0_07933457',
+    0 => 'Block_1360296979665dff5b171182_85508042',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -44,6 +44,15 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 <div class="container-fluid">
   <div class="row">
+    <?php if (empty($_smarty_tpl->tpl_vars['statsIsometric']->value) && empty($_smarty_tpl->tpl_vars['statsIsotonic']->value) && empty($_smarty_tpl->tpl_vars['statsAerobic']->value)) {?>
+    <div class="card col-lg-12">
+      <div class="card-header">
+        <div class="col-lg-6">
+          <h4>Brak statystyk do wyświetlenia.</h4>  
+        </div>
+      </div>
+    </div>
+    <?php }?>
     <?php if (!empty($_smarty_tpl->tpl_vars['statsIsotonic']->value)) {?>
     <div class="card col-lg-12">
       <div class="card-header">

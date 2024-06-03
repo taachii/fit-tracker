@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-03 17:49:39
+/* Smarty version 4.3.4, created on 2024-06-03 19:44:29
   from 'D:\xampp\htdocs\fit-tracker\app\views\noteEntryEdit_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665de613565e51_40754877',
+  'unifunc' => 'content_665e00fde8c901_88659759',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0e26e10f80a943dd5a85a01dbea6e4533d23989f' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\noteEntryEdit_view.tpl',
-      1 => 1717429778,
+      1 => 1717436665,
       2 => 'file',
     ),
   ),
@@ -21,35 +21,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_665de613565e51_40754877 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665e00fde8c901_88659759 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_914538954665de613556242_85648475', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1303920474665e00fde7cdb6_86852428', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "form.tpl");
 }
 /* {block 'content'} */
-class Block_914538954665de613556242_85648475 extends Smarty_Internal_Block
+class Block_1303920474665e00fde7cdb6_86852428 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_914538954665de613556242_85648475',
+    0 => 'Block_1303920474665e00fde7cdb6_86852428',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
-  <div class="messages alert alert-danger">
-        <?php $_smarty_tpl->_subTemplateRender("file:messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+  <div >
+    <?php $_smarty_tpl->_subTemplateRender("file:messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
   </div>
   <?php }?>
-  <div class="row mx-0 mb-4">
+  <div class="form-header row mx-0 mb-4">
     <div class="col-sm-6 p-md-0">
       <h4>Wpis do notatki</h4>
     </div>

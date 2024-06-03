@@ -3,10 +3,10 @@
 {block name=content}
   {if $msgs->isError()}
   <div>
-      {include file="messages.tpl"}
+    {include file="messages.tpl"}
   </div>
   {/if}
-  <h4 class="text-center mb-4">Logowanie</h4>
+  <h4 class="form-header text-center mb-4">Logowanie</h4>
   <form action="{$conf->action_root}login" method="post">
     <div class="form-group">
       <label for="id_email"><strong>Email</strong></label>

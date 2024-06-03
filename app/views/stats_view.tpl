@@ -3,6 +3,15 @@
 {block name=content}
 <div class="container-fluid">
   <div class="row">
+    {if empty($statsIsometric) && empty($statsIsotonic) && empty($statsAerobic)}
+    <div class="card col-lg-12">
+      <div class="card-header">
+        <div class="col-lg-6">
+          <h4>Brak statystyk do wyświetlenia.</h4>  
+        </div>
+      </div>
+    </div>
+    {/if}
     {if !empty($statsIsotonic)}
     <div class="card col-lg-12">
       <div class="card-header">

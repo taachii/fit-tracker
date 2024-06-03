@@ -2,14 +2,14 @@
 
 {block name=content}
   {if $msgs->isError()}
-  <div class="messages alert alert-danger">
-        {include file="messages.tpl"}
+  <div>
+    {include file="messages.tpl"}
   </div>
   {/if}
-  <div class="row mx-0 mb-4">
-  <div class="col-sm-6 p-md-0">
-    <h4>Notatka treningowa</h4>
-  </div>
+  <div class="form-header row mx-0 mb-4">
+    <div class="col-sm-6 p-md-0">
+      <h4>Notatka treningowa</h4>
+    </div>
   <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
     <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">
       <i class="fa fa-arrow-left"></i>
