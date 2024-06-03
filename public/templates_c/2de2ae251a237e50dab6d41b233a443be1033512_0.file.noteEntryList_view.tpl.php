@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-02 14:39:01
+/* Smarty version 4.3.4, created on 2024-06-02 15:04:11
   from 'D:\xampp\htdocs\fit-tracker\app\views\noteEntryList_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665c67e5971be8_21650044',
+  'unifunc' => 'content_665c6dcb65fbe4_85872158',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2de2ae251a237e50dab6d41b233a443be1033512' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\noteEntryList_view.tpl',
-      1 => 1717331940,
+      1 => 1717331988,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_665c67e5971be8_21650044 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665c6dcb65fbe4_85872158 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>

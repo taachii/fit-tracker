@@ -27,7 +27,7 @@ class LoginCtrl {
       'email' => true,
       'required' => true,
       'required_message' => "Nie podano adresu e-mail!",
-      'validator_message' => "Podany adres e-mail jest niepoprawny!"
+      'validator_message' => "Podany adres e-mail jest niepoprawny!",
     ]);
 
     $this->form->pass = $this->validator->validateFromRequest("pass", [

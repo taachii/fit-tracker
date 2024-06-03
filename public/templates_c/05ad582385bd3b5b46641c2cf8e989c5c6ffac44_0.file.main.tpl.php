@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-01 15:39:51
+/* Smarty version 4.3.4, created on 2024-06-03 15:47:13
   from 'D:\xampp\htdocs\fit-tracker\app\views\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665b24a7b396b8_70805738',
+  'unifunc' => 'content_665dc961454bb7_27722086',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '05ad582385bd3b5b46641c2cf8e989c5c6ffac44' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\templates\\main.tpl',
-      1 => 1717249153,
+      1 => 1717421882,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:required.tpl' => 1,
   ),
 ),false)) {
-function content_665b24a7b396b8_70805738 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665dc961454bb7_27722086 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -57,7 +57,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             Nav header start
         ***********************************-->
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_842863257665b24a7b30e42_87964770', 'header');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1067514072665dc96144a158_14587661', 'header');
 ?>
 
         <!--**********************************
@@ -68,7 +68,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_842863257665b24a7b
             Sidebar start
         ***********************************-->
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_104011153665b24a7b35260_14500301', 'sidebar');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_541223146665dc96144e208_68559499', 'sidebar');
 ?>
 
         <!--**********************************
@@ -80,7 +80,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_104011153665b24a7b
         ***********************************-->
         <div class="content-body">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1772241784665b24a7b38d20_92247893', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_395278975665dc9614541d7_30243332', 'content');
 ?>
 
         </div>
@@ -115,22 +115,21 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1772241784665b24a7
 
 </html><?php }
 /* {block 'header'} */
-class Block_842863257665b24a7b30e42_87964770 extends Smarty_Internal_Block
+class Block_1067514072665dc96144a158_14587661 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'header' => 
   array (
-    0 => 'Block_842863257665b24a7b30e42_87964770',
+    0 => 'Block_1067514072665dc96144a158_14587661',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
         <div class="nav-header">
-            <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-view_home" class="brand-logo">
+            <a href="javascript:void()" class="brand-logo">
                 <span class="brand-title">Fit<span class="tracker-text">Tracker</span></span>
-            </a>
+            
 
             <div class="nav-control">
                 <div class="hamburger">
@@ -159,8 +158,8 @@ view_home" class="brand-logo">
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 view_profile" class="dropdown-item">
-                                        <i class="icon-user"></i>
-                                        <span class="ml-2">Mój profil </span>
+                                        <i class="icon icon-chart-bar-33"></i>
+                                        <span class="ml-2">Statystyki </span>
                                     </a>
                                     <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 logout" class="dropdown-item">
@@ -179,12 +178,12 @@ logout" class="dropdown-item">
 }
 /* {/block 'header'} */
 /* {block 'sidebar'} */
-class Block_104011153665b24a7b35260_14500301 extends Smarty_Internal_Block
+class Block_541223146665dc96144e208_68559499 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'sidebar' => 
   array (
-    0 => 'Block_104011153665b24a7b35260_14500301',
+    0 => 'Block_541223146665dc96144e208_68559499',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -194,16 +193,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <div class="quixnav">
                 <div class="quixnav-scroll">
                     <ul class="metismenu" id="menu">
-                        <li class="nav-label first">Menu</li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                    class="icon icon-single-04"></i><span class="nav-text"><?php echo $_smarty_tpl->tpl_vars['user']->value['username'];?>
-</span></a>
-                            <ul aria-expanded="false">
-                                <li><a href="#.html">Mój profil</a></li>
-                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-logout">Wyloguj</a></li>
-                            </ul>
-                        </li>
                         <?php if ($_smarty_tpl->tpl_vars['isAdmin']->value) {?>
                         <li class="nav-label">Administracja</li>
                         <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -216,21 +205,45 @@ view_roleList">Role</a></li>
                             </ul>
                         </li>
                         <?php }?>
-                        <li class="nav-label">Treningi</li>
+                        <li class="nav-label">Menu</li>
+                        <?php if ($_smarty_tpl->tpl_vars['isAdmin']->value || $_smarty_tpl->tpl_vars['isTrainee']->value) {?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+view_myTrainer" aria-expanded="false">
+                            <i class="icon-user"></i><span class="nav-text">Mój trener</span></a>
+                        </li>
                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 view_noteList" aria-expanded="false">
                             <i class="icon icon-app-store"></i><span class="nav-text">Notatki</span></a>
                         </li>
-                        <li><a href="#.html" aria-expanded="false">
-                            <i class="icon icon-chart-bar-33"></i><span class="nav-text">Mój trener</span></a>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+view_stats" aria-expanded="false">
+                            <i class="icon icon-chart-bar-33"></i><span class="nav-text">Statystyki</span></a>
                         </li>
-                        <li class="nav-label">Zdrowie</li>
-                        <li><a href="javascript:void()" aria-expanded="false">
-                            <i class="icon icon-book-open-2"></i><span class="nav-text">Plany treningowe</span></a>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+view_trainerList" aria-expanded="false">
+                            <i class="icon icon-users-mm"></i><span class="nav-text">Dostępni trenerzy</span></a>
                         </li>
-                        <li><a href="javascript:void()" aria-expanded="false">
-                            <i class="icon icon-users-mm"></i><span class="nav-text">Nasi trenerzy</span></a>
+                        <?php }?>
+                        <?php if ($_smarty_tpl->tpl_vars['isTrainer']->value) {?>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+view_traineeList" aria-expanded="false">
+                            <i class="icon icon-users-mm"></i><span class="nav-text">Moi podopieczni</span></a>
                         </li>
+                        <li>
+                        </li>
+                        <li><a <?php if (false) {?>class="requestWarning"<?php }?> href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+view_requestList" aria-expanded="false">
+                            <i class="icon icon-bell-53"></i><span class="nav-text">Prośby o współpracę</span></a>
+                        </li>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+view_noteList" aria-expanded="false">
+                            <i class="icon icon-app-store"></i><span class="nav-text">Notatki</span></a>
+                        </li>
+                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+view_stats" aria-expanded="false">
+                            <i class="icon icon-chart-bar-33"></i><span class="nav-text">Statystyki</span></a>
+                        </li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
@@ -240,12 +253,12 @@ view_noteList" aria-expanded="false">
 }
 /* {/block 'sidebar'} */
 /* {block 'content'} */
-class Block_1772241784665b24a7b38d20_92247893 extends Smarty_Internal_Block
+class Block_395278975665dc9614541d7_30243332 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1772241784665b24a7b38d20_92247893',
+    0 => 'Block_395278975665dc9614541d7_30243332',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

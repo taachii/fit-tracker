@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-01 22:15:50
+/* Smarty version 4.3.4, created on 2024-06-02 18:03:09
   from 'D:\xampp\htdocs\fit-tracker\app\views\roleEdit_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665b81765a6313_44222034',
+  'unifunc' => 'content_665c97bde12436_51470492',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42a58a9e410e0374a8ed21c0639d306e60f1d881' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\roleEdit_view.tpl',
-      1 => 1717272947,
+      1 => 1717344187,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_665b81765a6313_44222034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665c97bde12436_51470492 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2084248831665b8176599c38_05478529', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1328192910665c97bde05f26_08000877', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "form.tpl");
 }
 /* {block 'content'} */
-class Block_2084248831665b8176599c38_05478529 extends Smarty_Internal_Block
+class Block_1328192910665c97bde05f26_08000877 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_2084248831665b8176599c38_05478529',
+    0 => 'Block_1328192910665c97bde05f26_08000877',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,7 +51,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
   <?php }?>
   <div class="row mx-0 mb-4">
     <div class="col-sm-6 p-md-0">
-      <h4>Edycja roli:</h4>
+      <h4>Rola</h4>
     </div>
     <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
       <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">

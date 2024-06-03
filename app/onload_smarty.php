@@ -1,5 +1,6 @@
 <?php
 
+use \core\RoleUtils;
 /*
  * The script automatically executed when getSmarty() is called for the first time.
  * Use it to setup the engine or pass additional variables that are always needed.
@@ -29,3 +30,6 @@ function rel_url($params, $smarty)
 
 #assign variables
 #\core\App::getSmarty()->assign('variable',$variable);
+\core\App::getSmarty()->assign('isAdmin', RoleUtils::inRole('admin'));
+\core\App::getSmarty()->assign('isTrainee', RoleUtils::inRole('trainee'));
+\core\App::getSmarty()->assign('isTrainer', RoleUtils::inRole('trainer'));

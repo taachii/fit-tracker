@@ -5,8 +5,18 @@
   <div class="row">
     <div class="card col-lg-12">
       <div class="card-header">
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <h4>Role</h4>  
+        </div>
+        <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+          <a href="{$conf->action_root}roleAdd">
+            <button type="button" class="btn-lg btn-info">
+              Nowa rola
+              <span class="btn-icon-right">
+                <i class="fa fa-plus color-info"></i>
+              </span>
+           </button>
+          </a>  
         </div>
       </div>
       <div class="card-body">
@@ -40,6 +50,9 @@
                   </a>
                   <a href="{$conf->action_root}roleActivate/{$r["idRole"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Aktywuj">
                     <i class="fa fa-check"></i>
+                  </a>
+                  <a href="{$conf->action_root}roleDelete/{$r["idRole"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń">
+                    <i class="fa fa-trash"></i>
                   </a>
                 </span>
               </td>

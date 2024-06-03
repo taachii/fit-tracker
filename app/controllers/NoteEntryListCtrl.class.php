@@ -23,12 +23,10 @@ class NoteEntryListCtrl {
 
   private function generateView() {
     App::getSmarty()->assign('user', $_SESSION['user']);
-    App::getSmarty()->assign('isAdmin', RoleUtils::inRole('admin'));
     App::getSmarty()->assign('cancelAction', "view_noteList");
     App::getSmarty()->assign('entries', $this->entries);
     App::getSmarty()->assign('noteID', $this->noteID);
     App::getSmarty()->display('noteEntryList_view.tpl');
-    Utils::debugToConsole($this->noteID);
   }
 
   public function action_view_noteEntryList() {

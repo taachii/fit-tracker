@@ -5,20 +5,14 @@
   <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
       <div class="welcome-text">
-        <h4>Witaj, {$user['username']}!</h4>
-        <span class="ml-1">Dodaj, usuń lub edytuj swoje notatki treningowe!</span>
+        <h4>Notatki użytkownika: <strong><em>{$traineeUsername}</em></strong></h4>
       </div>
     </div>
     <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-      <a href="{$conf->action_root}noteAdd">
-        <button type="button" class="btn-lg btn-info">
-          Nowa notatka
-          <span class="btn-icon-right">
-            <i class="fa fa-plus color-info"></i>
-          </span>
-        </button>
+      <a href="javascript:history.go(-1)" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wstecz">
+        <i class="fa fa-arrow-left"></i>
       </a>
-    </div>
+  </div>
   </div>
   <div class="row">
     {if !empty($notes)}
@@ -28,15 +22,6 @@
         <div class="card-header">
           <div class="col-sm-6 p-md-0">
             <h5 class="card-title">{$n['noteTitle']}</h5>
-          </div>
-          <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-            <div>
-              <a href="{$conf->action_root}view_noteEdit/{$n['idTrainingNote']}" class="btn btn-outline-info">Edytuj
-              </a>
-              <a href="{$conf->action_root}noteDelete/{$n['idTrainingNote']}" class="btn btn-outline-danger">
-                <i class="fa fa-trash color-danger"></i>
-              </a>
-            </div>  
           </div>
         </div>
         <hr>
@@ -66,9 +51,9 @@
     </div>
     {/foreach}
     {else}
-      <div class="container-fluid">
-        <p>Nie posiadasz jeszcze żadnych notatek.</p>
-      </div>
+    <div class="container-fluid">
+      <p>Użytkownik <strong>{$traineeUsername}</strong> nie posiada żadnych notatek.</p>
+    </div>
     {/if}
   </div>
  </div>

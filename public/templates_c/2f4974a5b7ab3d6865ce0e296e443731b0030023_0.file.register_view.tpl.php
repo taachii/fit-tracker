@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-01 22:21:45
+/* Smarty version 4.3.4, created on 2024-06-03 13:54:20
   from 'D:\xampp\htdocs\fit-tracker\app\views\register_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665b82d9b26a56_52194893',
+  'unifunc' => 'content_665daeecb07b59_07768876',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f4974a5b7ab3d6865ce0e296e443731b0030023' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\register_view.tpl',
-      1 => 1717248445,
+      1 => 1717415658,
       2 => 'file',
     ),
   ),
@@ -21,31 +21,31 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_665b82d9b26a56_52194893 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665daeecb07b59_07768876 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_762075018665b82d9b199f5_66635691', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_965054616665daeecaf9511_01189882', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "form.tpl");
 }
 /* {block 'content'} */
-class Block_762075018665b82d9b199f5_66635691 extends Smarty_Internal_Block
+class Block_965054616665daeecaf9511_01189882 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_762075018665b82d9b199f5_66635691',
+    0 => 'Block_965054616665daeecaf9511_01189882',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
-  <div class="messages alert alert-danger">
-        <?php $_smarty_tpl->_subTemplateRender("file:messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+  <div>
+    <?php $_smarty_tpl->_subTemplateRender("file:messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
   </div>
   <?php }?>

@@ -26,10 +26,7 @@ class RoleEditCtrl {
 
   private function validateSave() {
 
-    $this->form->idRole = $this->validator->validateFromRequest("idRole", [
-      'required' => true,
-      'required_message' => "Błędne wywołanie aplikacji!"
-    ]);
+    $this->form->idRole = ParamUtils::getFromRequest("idRole", true, "Błędne wywołanie aplikacji!");
 
     $this->form->roleName = $this->validator->validateFromRequest("roleName", [
       'required' => true,
@@ -71,11 +68,17 @@ class RoleEditCtrl {
   public function action_roleSave() {
     if($this->validateSave()) {
       try {
-        App::getDB()->update("role", [
-          "roleName" => $this->form->roleName
-        ], [
-          "idRole" => $this->form->idRole
-        ]);
+        if($this->form->idRole == '') {
+          App::getDB()->insert("role", [
+            "roleName" => $this->form->roleName
+          ]);
+        } else {
+          App::getDB()->update("role", [
+            "roleName" => $this->form->roleName
+          ], [
+            "idRole" => $this->form->idRole
+          ]);
+        }
       } catch(\PDOException $e) {
         Utils::addErrorMessage("Wystąpił błąd podczas usuwania rekordu.");
         if(App::getConf()->debug) {
@@ -88,16 +91,36 @@ class RoleEditCtrl {
     }
   }
 
+  public function action_roleAdd() {
+    $this->generateView();
+  }
+
+  public function action_roleDelete() {
+    if($this->validateEdit()) {
+      try {
+        App::getDB()->query("SET foreign_key_checks = 0");
+        App::getDB()->delete("role", [
+          "idRole" => $this->form->idRole
+        ]);
+        App::getDB()->query("SET foreign_key_checks = 1");
+      } catch(\PDOException $e) {
+        Utils::addErrorMessage("Wystąpił błąd podczas usuwania rekordu.");
+        if(App::getConf()->debug) {
+          Utils::addErrorMessage($e->getMessage());
+        }
+      }
+    }
+    App::getRouter()->redirectTo('view_roleList');
+  }
+
   private function roleActiveToggle($value) {
     if($this->validateEdit()) {
-
       try {
         App::getDB()->update("role", [
           "isActive" => $value,
         ], [
           "idRole" => $this->form->idRole
         ]);
-        
       } catch(\PDOException $e) {
         Utils::addErrorMessage("Wystąpił błąd podczas usuwania rekordu.");
         if(App::getConf()->debug) {

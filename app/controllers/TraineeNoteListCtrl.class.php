@@ -5,15 +5,18 @@ namespace app\controllers;
 use core\App;
 use core\Utils;
 use core\RoleUtils;
+use core\ParamUtils;
 
-class NoteListCtrl {
+class TraineeNoteListCtrl {
 
   private $notes;
+  private $traineeUsername;
 
   private function generateView() {
     App::getSmarty()->assign('user', $_SESSION['user']);
     App::getSmarty()->assign('notes', $this->notes);
-    App::getSmarty()->display('noteList_view.tpl');
+    App::getSmarty()->assign('traineeUsername', $this->traineeUsername);
+    App::getSmarty()->display('traineeNoteList_view.tpl');
   }
 
   private function convertSeconds($seconds) {
@@ -28,16 +31,24 @@ class NoteListCtrl {
     ];
   }
 
-  public function action_view_noteList() {
-    $loggedUserId = $_SESSION['user']['idUser'];
+  public function action_view_traineeNoteList() {
+    $traineeId = ParamUtils::getFromCleanURL(1);
 
     try {
+      $user = App::getDB()->get("user", [
+        "username"
+      ], [
+        "idUser" => $traineeId
+      ]);
+
+      $this->traineeUsername = $user["username"];
+
       $this->notes = App::getDB()->select("trainingnote", [
         "idTrainingNote",
         "noteTitle",
         "creationDate"
       ], [
-        "idUser" => $loggedUserId,
+        "idUser" => $traineeId,
         "ORDER" =>  [
           "creationDate" => "DESC"
         ]

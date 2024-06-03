@@ -2,8 +2,8 @@
 
 {block name=content}
   {if $msgs->isError()}
-  <div class="messages alert alert-danger">
-        {include file="messages.tpl"}
+  <div>
+    {include file="messages.tpl"}
   </div>
   {/if}
   <h4 class="text-center mb-4">Rejestracja</h4>

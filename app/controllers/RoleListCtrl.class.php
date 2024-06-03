@@ -9,12 +9,11 @@ use core\ParamUtils;
 
 class RoleListCtrl {
 
-  private $records;
+  private $roles;
 
   private function generateView() {
     App::getSmarty()->assign('user', $_SESSION['user']);
-    App::getSmarty()->assign('isAdmin', RoleUtils::inRole('admin'));
-    App::getSmarty()->assign('roles', $this->records);
+    App::getSmarty()->assign('roles', $this->roles);
     App::getSmarty()->display('roleList_view.tpl');
   }
 
@@ -23,7 +22,7 @@ class RoleListCtrl {
     $where["ORDER"] = "creationDate";
 
     try {
-      $this->records = App::getDB()->select("role", [
+      $this->roles = App::getDB()->select("role", [
         "idRole",
         "roleName",
         "isActive",
@@ -31,7 +30,7 @@ class RoleListCtrl {
         "deactivationDate"
       ], $where);
 
-      foreach($this->records as &$r) {
+      foreach($this->roles as &$r) {
         $r['isActive'] = ($r['isActive'] == 1) ? "TAK" : "NIE";
       }
     } catch(\PDOException $e) {

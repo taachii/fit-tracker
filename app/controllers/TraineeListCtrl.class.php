@@ -6,15 +6,15 @@ use core\App;
 use core\Utils;
 use core\RoleUtils;
 use core\ParamUtils;
-use app\forms\UserSearchForm;
+use app\forms\TraineeSearchForm;
 
-class UserListCtrl {
+class TraineeListCtrl {
 
   private $form;
-  private $users;
+  private $trainees;
 
   public function __construct() {
-    $this->form = new UserSearchForm();
+    $this->form = new TraineeSearchForm();
   }
 
   private function validate() {
@@ -28,36 +28,30 @@ class UserListCtrl {
   private function generateView() {
     App::getSmarty()->assign('user', $_SESSION['user']);
     App::getSmarty()->assign('form', $this->form);
-    App::getSmarty()->assign('users', $this->users);
-    App::getSmarty()->display('userList_view.tpl');
+    App::getSmarty()->assign('trainees', $this->trainees);
+    App::getSmarty()->display('traineeList_view.tpl');
   }
 
-  public function action_view_userList() {
+  public function action_view_traineeList() {
     if($this->validate()) {
+      $loggedUserId = $_SESSION['user']['idUser'];
       try {
-        $this->users = App::getDB()->select("user", [
-          "[>]rolelog" => ["user.idUser" => "idUser"],
-          "[>]role" => ["rolelog.idRole" => "idRole"]
+        $this->trainees = App::getDB()->select("user", [
+          "[>]mentorship" => ["idUser" => "idTrainee"]
         ], [
           "user.idUser",
           "user.username",
           "user.email",
-          "user.registrationDate",
-          "user.isActive",
-          "user.deactivationDate",
-          "role.roleName",
-          "user.editDate",
-          "user.idEditor"
+          "mentorship.startDate"
         ], [
           "user.username[~]" => $this->form->searchValue.'%',
-          "rolelog.removalDate" => NULL,
-          "ORDER" => "registrationDate"
+          "mentorship.idTrainer" => $loggedUserId,
+          "mentorship.endDate" => NULL,
+          "user.isActive" => 1,
+          "ORDER" => [
+            "mentorship.startDate" => "DESC"
+          ]
         ]);
-
-        foreach($this->users as &$u) {
-          $u['isActive'] = ($u['isActive'] == 1) ? "TAK" : "NIE";
-        }
-
       } catch(\PDOException $e) {
         Utils::addErrorMessage("Wystąpił błąd podczas pobierania rekordów!");
         if(App::getConf()->debug) {
@@ -66,6 +60,5 @@ class UserListCtrl {
       }
     }
     $this->generateView();
-
   }
 }

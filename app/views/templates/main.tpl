@@ -29,9 +29,9 @@
         ***********************************-->
         {block name=header}
         <div class="nav-header">
-            <a href="{$conf->action_root}view_home" class="brand-logo">
+            <a href="javascript:void()" class="brand-logo">
                 <span class="brand-title">Fit<span class="tracker-text">Tracker</span></span>
-            </a>
+            
 
             <div class="nav-control">
                 <div class="hamburger">
@@ -58,8 +58,8 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="{$conf->action_root}view_profile" class="dropdown-item">
-                                        <i class="icon-user"></i>
-                                        <span class="ml-2">Mój profil </span>
+                                        <i class="icon icon-chart-bar-33"></i>
+                                        <span class="ml-2">Statystyki </span>
                                     </a>
                                     <a href="{$conf->action_root}logout" class="dropdown-item">
                                         <i class="icon-key"></i>
@@ -85,14 +85,6 @@
             <div class="quixnav">
                 <div class="quixnav-scroll">
                     <ul class="metismenu" id="menu">
-                        <li class="nav-label first">Menu</li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                    class="icon icon-single-04"></i><span class="nav-text">{$user['username']}</span></a>
-                            <ul aria-expanded="false">
-                                <li><a href="#.html">Mój profil</a></li>
-                                <li><a href="{$conf->action_root}logout">Wyloguj</a></li>
-                            </ul>
-                        </li>
                         {if $isAdmin}
                         <li class="nav-label">Administracja</li>
                         <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -103,20 +95,37 @@
                             </ul>
                         </li>
                         {/if}
-                        <li class="nav-label">Treningi</li>
+                        <li class="nav-label">Menu</li>
+                        {if $isAdmin || $isTrainee}
+                        <li><a href="{$conf->action_root}view_myTrainer" aria-expanded="false">
+                            <i class="icon-user"></i><span class="nav-text">Mój trener</span></a>
+                        </li>
                         <li><a href="{$conf->action_root}view_noteList" aria-expanded="false">
                             <i class="icon icon-app-store"></i><span class="nav-text">Notatki</span></a>
                         </li>
-                        <li><a href="#.html" aria-expanded="false">
-                            <i class="icon icon-chart-bar-33"></i><span class="nav-text">Mój trener</span></a>
+                        <li><a href="{$conf->action_root}view_stats" aria-expanded="false">
+                            <i class="icon icon-chart-bar-33"></i><span class="nav-text">Statystyki</span></a>
                         </li>
-                        <li class="nav-label">Zdrowie</li>
-                        <li><a href="javascript:void()" aria-expanded="false">
-                            <i class="icon icon-book-open-2"></i><span class="nav-text">Plany treningowe</span></a>
+                        <li><a href="{$conf->action_root}view_trainerList" aria-expanded="false">
+                            <i class="icon icon-users-mm"></i><span class="nav-text">Dostępni trenerzy</span></a>
                         </li>
-                        <li><a href="javascript:void()" aria-expanded="false">
-                            <i class="icon icon-users-mm"></i><span class="nav-text">Nasi trenerzy</span></a>
+                        {/if}
+                        {if $isTrainer}
+                        <li><a href="{$conf->action_root}view_traineeList" aria-expanded="false">
+                            <i class="icon icon-users-mm"></i><span class="nav-text">Moi podopieczni</span></a>
                         </li>
+                        <li>
+                        </li>
+                        <li><a {if false }class="requestWarning"{/if} href="{$conf->action_root}view_requestList" aria-expanded="false">
+                            <i class="icon icon-bell-53"></i><span class="nav-text">Prośby o współpracę</span></a>
+                        </li>
+                        <li><a href="{$conf->action_root}view_noteList" aria-expanded="false">
+                            <i class="icon icon-app-store"></i><span class="nav-text">Notatki</span></a>
+                        </li>
+                        <li><a href="{$conf->action_root}view_stats" aria-expanded="false">
+                            <i class="icon icon-chart-bar-33"></i><span class="nav-text">Statystyki</span></a>
+                        </li>
+                        {/if}
                     </ul>
                 </div>
             </div>

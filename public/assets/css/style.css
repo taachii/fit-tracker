@@ -1336,11 +1336,16 @@ pre {
     margin-left: 83.33333%; }
   .offset-xxl-11 {
     margin-left: 91.66667%; } }
-
+    
 .table {
   width: 100%;
+  text-align: center;
   margin-bottom: 1rem;
-  color: #BDBDC7; }
+  color: #BDBDC7; 
+}
+  .table th {
+    color:  #828282;
+  }
   .table th,
   .table td {
     padding: 0.75rem;
@@ -3954,6 +3959,10 @@ input[type="button"].btn-block {
     padding: 0.75rem 1.25rem;
     color: inherit; }
 
+.myTrainer {
+  font-size: 1.8em;
+}
+
 .alert-primary {
   color: #2e1f72;
   background-color: #ded8f8;
@@ -4002,7 +4011,7 @@ input[type="button"].btn-block {
 .alert-danger {
   color: #850b0b;
   background-color: #ffd0d0;
-  margin-bottom: 2em;
+  margin-bottom: 0.4em;
   border-color: #ffbebe; }
   .alert-danger hr {
     border-top-color: #ffa5a5; }
@@ -10388,6 +10397,10 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
         top: -2px; }
       .quixnav .metismenu > li > a {
         color: #bdbdc7; }
+      
+      .quixnav .metismenu > li > a.requestWarning {
+        background-color: #FFAA16;
+        color: white; }
       .quixnav .metismenu > li:hover > a, .quixnav .metismenu > li:focus > a, .quixnav .metismenu > li.mm-active > a {
         background-color: #6b51df;
         color: #fff; }

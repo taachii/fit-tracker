@@ -2,7 +2,7 @@
 
 {block name=content}
   {if $msgs->isError()}
-  <div class="alert alert-danger">
+  <div>
       {include file="messages.tpl"}
   </div>
   {/if}

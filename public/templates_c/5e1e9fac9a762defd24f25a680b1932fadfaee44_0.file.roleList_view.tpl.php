@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-05-29 21:56:20
+/* Smarty version 4.3.4, created on 2024-06-02 18:16:19
   from 'D:\xampp\htdocs\fit-tracker\app\views\roleList_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66578864d1b775_59289358',
+  'unifunc' => 'content_665c9ad3077ea2_24739620',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e1e9fac9a762defd24f25a680b1932fadfaee44' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\roleList_view.tpl',
-      1 => 1717011117,
+      1 => 1717344978,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66578864d1b775_59289358 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665c9ad3077ea2_24739620 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_65930470566578864d083c6_42567470', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1486161437665c9ad3068326_51206962', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_65930470566578864d083c6_42567470 extends Smarty_Internal_Block
+class Block_1486161437665c9ad3068326_51206962 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_65930470566578864d083c6_42567470',
+    0 => 'Block_1486161437665c9ad3068326_51206962',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -46,8 +46,19 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
   <div class="row">
     <div class="card col-lg-12">
       <div class="card-header">
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <h4>Role</h4>  
+        </div>
+        <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+          <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+roleAdd">
+            <button type="button" class="btn-lg btn-info">
+              Nowa rola
+              <span class="btn-icon-right">
+                <i class="fa fa-plus color-info"></i>
+              </span>
+           </button>
+          </a>  
         </div>
       </div>
       <div class="card-body">
@@ -80,7 +91,9 @@ view_roleEdit/<?php echo $_smarty_tpl->tpl_vars['r']->value["idRole"];?>
 roleDeactivate/<?php echo $_smarty_tpl->tpl_vars['r']->value["idRole"];?>
 " class="mr-4" data-toggle="tooltip" data-placement="top" title="Dezaktywuj"><i class="fa fa-close"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 roleActivate/<?php echo $_smarty_tpl->tpl_vars['r']->value["idRole"];?>
-" class="mr-4" data-toggle="tooltip" data-placement="top" title="Aktywuj"><i class="fa fa-check"></i></a></span></td></tr>
+" class="mr-4" data-toggle="tooltip" data-placement="top" title="Aktywuj"><i class="fa fa-check"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+roleDelete/<?php echo $_smarty_tpl->tpl_vars['r']->value["idRole"];?>
+" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń"><i class="fa fa-trash"></i></a></span></td></tr>
           <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>  
