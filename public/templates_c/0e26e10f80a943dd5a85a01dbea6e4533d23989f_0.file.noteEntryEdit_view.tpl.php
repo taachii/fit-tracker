@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-02 14:31:59
+/* Smarty version 4.3.4, created on 2024-06-03 17:49:39
   from 'D:\xampp\htdocs\fit-tracker\app\views\noteEntryEdit_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665c663f442832_11882919',
+  'unifunc' => 'content_665de613565e51_40754877',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0e26e10f80a943dd5a85a01dbea6e4533d23989f' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\noteEntryEdit_view.tpl',
-      1 => 1717331285,
+      1 => 1717429778,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_665c663f442832_11882919 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665de613565e51_40754877 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_980278525665c663f4328d7_70395067', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_914538954665de613556242_85648475', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "form.tpl");
 }
 /* {block 'content'} */
-class Block_980278525665c663f4328d7_70395067 extends Smarty_Internal_Block
+class Block_914538954665de613556242_85648475 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_980278525665c663f4328d7_70395067',
+    0 => 'Block_914538954665de613556242_85648475',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -72,7 +72,7 @@ noteEntrySave" method="post">
 " placeholder="3">
     </div>
     <div class="form-group">
-      <label for="id_reps"><strong>Liczba powtórzeń</strong></label>
+      <label for="id_reps"><strong>Liczba powtórzeń / czas [s]</strong></label>
       <input id="id_reps" name="reps" type="number" min="1" class="form-control" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['form']->value->reps ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 " placeholder="12">
     </div>

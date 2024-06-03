@@ -26,7 +26,7 @@
       <input id="id_sets" name="sets" type="number" min="1" class="form-control" value="{$form->sets|default:''}" placeholder="3">
     </div>
     <div class="form-group">
-      <label for="id_reps"><strong>Liczba powtórzeń</strong></label>
+      <label for="id_reps"><strong>Liczba powtórzeń / czas [s]</strong></label>
       <input id="id_reps" name="reps" type="number" min="1" class="form-control" value="{$form->reps|default:''}" placeholder="12">
     </div>
     <div class="form-group">

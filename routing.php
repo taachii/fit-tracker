@@ -61,7 +61,7 @@ Utils::addRoute('view_home', 'HomeCtrl', $everyRole);
   Utils::addRoute('view_myTrainer', 'MyTrainerCtrl', ['admin', 'trainee']);
 
   # Akcje zwiazane ze statystykami
-  // Utils::addRoute('view_stats', 'StatsCtrl', $everyRole);
+  Utils::addRoute('view_stats', 'StatsCtrl', $everyRole);
 
   # Akcje zwiazane z trenerami
   Utils::addRoute('view_trainerList', 'TrainerListCtrl', ['admin', 'trainee']);
