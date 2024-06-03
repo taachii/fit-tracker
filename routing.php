@@ -5,8 +5,11 @@ use core\Utils;
 
 $everyRole = ['admin', 'trainee', 'trainer'];
 
-App::getRouter()->setDefaultRoute('logout'); # Default action
-App::getRouter()->setLoginRoute('view_error403'); # Action to forward if no permissions
+# Akcja domyslna
+App::getRouter()->setDefaultRoute('view_home');
+
+# Akcja na ktora przekierowany jest uzytkownik jesli nie ma uprawnien
+App::getRouter()->setLoginRoute('view_error403'); 
 
 # Akcje zwiazane z uwierzytelnianiem
 Utils::addRoute('view_login', 'LoginCtrl');

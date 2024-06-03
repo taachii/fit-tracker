@@ -3963,6 +3963,24 @@ input[type="button"].btn-block {
   font-size: 1.8em;
 }
 
+.homeScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeText {
+  font-size: 1.3em;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.homeScreen img {
+  max-width: 100%; /* lub inny maksymalny rozmiar, który chcesz */
+  max-height: 100%; /* lub inny maksymalny rozmiar, który chcesz */
+}
 .alert-primary {
   color: #2e1f72;
   background-color: #ded8f8;
@@ -8139,8 +8157,8 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 3em;
-  margin-top: 8em;
+  margin: 2em;
+  margin-top: 4em;
  }
 
  .err {
