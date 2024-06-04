@@ -29,7 +29,7 @@
           <a href="{$conf->action_root}view_userEdit/{$u["idUser"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj">
             <i class="fa fa-pencil"></i>
           </a>
-          <a href="{$conf->action_root}userDeactivate/{$u["idUser"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Dezaktywuj">
+          <a href="{$conf->action_root}userDeactivate/{$u["idUser"]}/{$currentPage}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Dezaktywuj">
             <i class="fa fa-close"></i>
           </a>
           <a href="{$conf->action_root}userActivate/{$u["idUser"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Aktywuj">
@@ -43,7 +43,7 @@
   </tbody>
 </table>
 <div>
-  <p>Strony: {$totalPages}</p>
+  <p>Strona: {$currentPage} z {$totalPages}</p>
 </div>
 <div class="pagination col-sm-12 mt-2 mt-sm-0">
 <nav> 

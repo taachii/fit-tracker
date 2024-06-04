@@ -108,7 +108,8 @@ class RegisterCtrl {
         App::getDB()->insert("user", [
           "username" => $this->form->username,
           "email" => $this->form->email,
-          "password" => $hashed_pass
+          "password" => $hashed_pass,
+          "isActive" => 1
         ]);
 
         // Ustawienie roli użytkownikowi

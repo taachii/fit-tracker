@@ -12,7 +12,6 @@ class UserEditCtrl {
 
   private $form;
   private $validator;
-  private $idEditor;
 
   public function __construct() {
     $this->form = new UserEditForm();

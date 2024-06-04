@@ -22,6 +22,11 @@
         </div>
       </div>
       <div class="card-body">
+        {if $msgs->isError()}
+        <div>
+          {include file="messages.tpl"}
+        </div>
+        {/if}
         <div id="table">
         {include file="trainerListTable.tpl"}
         </div>

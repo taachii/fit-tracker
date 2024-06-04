@@ -10,6 +10,11 @@
         </div>
       </div>
       <div class="card-body">
+        {if $msgs->isError()}
+        <div>
+          {include file="messages.tpl"}
+        </div>
+        {/if}
         {if empty($requests)}
           <div class="container-fluid">
             Nie masz żadnych próśb o współpracę.

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-04 03:48:07
+/* Smarty version 4.3.4, created on 2024-06-04 09:19:03
   from 'C:\xampp\htdocs\fit-tracker\app\views\templates\userListTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665e7257e2dab5_05418644',
+  'unifunc' => 'content_665ebfe7d8f548_83191996',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '37767ff5c0990a03d1ce55663acccbb8ca21f36c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\fit-tracker\\app\\views\\templates\\userListTable.tpl',
-      1 => 1717465531,
+      1 => 1717485540,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665e7257e2dab5_05418644 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665ebfe7d8f548_83191996 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table class="table table-bordered table-striped verticle-middle table-responsive-sm">
   <thead>
     <tr>
@@ -54,6 +54,7 @@ $_smarty_tpl->tpl_vars['u']->do_else = false;
 view_userEdit/<?php echo $_smarty_tpl->tpl_vars['u']->value["idUser"];?>
 " class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj"><i class="fa fa-pencil"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 userDeactivate/<?php echo $_smarty_tpl->tpl_vars['u']->value["idUser"];?>
+/<?php echo $_smarty_tpl->tpl_vars['currentPage']->value;?>
 " class="mr-4" data-toggle="tooltip" data-placement="top" title="Dezaktywuj"><i class="fa fa-close"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 userActivate/<?php echo $_smarty_tpl->tpl_vars['u']->value["idUser"];?>
 " class="mr-4" data-toggle="tooltip" data-placement="top" title="Aktywuj"><i class="fa fa-check"></i></a></span></td></tr>
@@ -63,7 +64,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
   </tbody>
 </table>
 <div>
-  <p>Strony: <?php echo $_smarty_tpl->tpl_vars['totalPages']->value;?>
+  <p>Strona: <?php echo $_smarty_tpl->tpl_vars['currentPage']->value;?>
+ z <?php echo $_smarty_tpl->tpl_vars['totalPages']->value;?>
 </p>
 </div>
 <div class="pagination col-sm-12 mt-2 mt-sm-0">
