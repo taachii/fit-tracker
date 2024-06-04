@@ -57,7 +57,7 @@
                                    {$user['username']} <i class="mdi mdi-account"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="{$conf->action_root}view_profile" class="dropdown-item">
+                                    <a href="{$conf->action_root}view_stats" class="dropdown-item">
                                         <i class="icon icon-chart-bar-33"></i>
                                         <span class="ml-2">Statystyki </span>
                                     </a>

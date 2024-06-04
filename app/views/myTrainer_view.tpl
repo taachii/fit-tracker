@@ -12,7 +12,7 @@
   {if !empty($trainer)}
   <div class="row">
     <div class="container-fluid d-flex justify-content-center">
-      <div class="col-sm-6">
+      <div class="col-sm-9">
         <div class="card">
           <div class="myTrainer card-body">
             <div class="basic-list-group">
