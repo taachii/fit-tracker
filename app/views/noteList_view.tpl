@@ -9,6 +9,11 @@
         <span class="ml-1">Dodaj, usuń lub edytuj swoje notatki treningowe!</span>
       </div>
     </div>
+    {if $msgs->isError()}
+    <div>
+      {include file="messages.tpl"}
+    </div>
+    {/if}
     <div class="col-sm-6 justify-content-sm-end mt-2 mt-sm-0 d-flex">
       <a href="{$conf->action_root}noteAdd">
         <button type="button" class="btn-lg btn-info">
@@ -33,9 +38,9 @@
             <div>
               <a href="{$conf->action_root}view_noteEdit/{$n['idTrainingNote']}" class="btn btn-outline-info">Edytuj
               </a>
-              <a href="{$conf->action_root}noteDelete/{$n['idTrainingNote']}" class="btn btn-outline-danger">
+              <button onclick="confirmLink('{$conf->action_root}noteDelete/{$n['idTrainingNote']}', 'Czy na pewno chcesz usunąć notatkę?')" class="btn btn-outline-danger">
                 <i class="fa fa-trash color-danger"></i>
-              </a>
+              </button>
             </div>  
           </div>
         </div>

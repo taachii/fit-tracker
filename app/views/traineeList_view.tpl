@@ -45,7 +45,7 @@
                 <a href="{$conf->action_root}view_traineeNoteList/{$t['idUser']}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wyświetl notatki">
                   <i class="fa fa-eye"></i>
                 </a>
-                <a href="{$conf->action_root}mentorshipEndTrainer/{$t['idUser']}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Zakończ współpracę">
+                <a onclick="confirmLink('{$conf->action_root}mentorshipEndTrainer/{$t['idUser']}', 'Czy na pewno chcesz zakończyć współpracę?')" class="mr-4" data-toggle="tooltip" data-placement="top" title="Zakończ współpracę">
                   <i class="fa fa-close"></i>
                 </a>
                 <a href="mailto:{$t['email']}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wyślij wiadomość">

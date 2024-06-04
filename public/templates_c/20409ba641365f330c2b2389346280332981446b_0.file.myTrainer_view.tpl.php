@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-03 16:48:38
+/* Smarty version 4.3.4, created on 2024-06-03 23:08:36
   from 'D:\xampp\htdocs\fit-tracker\app\views\myTrainer_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665dd7c61626d9_72810360',
+  'unifunc' => 'content_665e30d4e6a500_39260774',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '20409ba641365f330c2b2389346280332981446b' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\myTrainer_view.tpl',
-      1 => 1717426116,
+      1 => 1717448860,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665dd7c61626d9_72810360 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665e30d4e6a500_39260774 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1250960047665dd7c6156564_64985160', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_956093002665e30d4e5e510_64697689', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_1250960047665dd7c6156564_64985160 extends Smarty_Internal_Block
+class Block_956093002665e30d4e5e510_64697689 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1250960047665dd7c6156564_64985160',
+    0 => 'Block_956093002665e30d4e5e510_64697689',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -75,11 +75,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                           <a href="mailto:<?php echo $_smarty_tpl->tpl_vars['trainer']->value['email'];?>
 " class="btn btn-outline-info btn-lg">Wyślij wiadomość
                           </a>
-                          <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+                          <button onclick="confirmLink('<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 mentorshipEndTrainee/<?php echo $_smarty_tpl->tpl_vars['trainer']->value['idUser'];?>
-" class="btn btn-outline-danger btn-lg"  data-toggle="tooltip" data-placement="top" title="Zakończ współpracę">
+', 'Czy na pewno chcesz zakończyć współpracę?')" class="btn btn-outline-danger btn-lg"  data-toggle="tooltip" data-placement="top" title="Zakończ współpracę">
                             <i class="fa fa-close color-danger"></i>
-                          </a>
+                          </button>
                         </div>  
                       </div>
                     </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-02 22:43:43
+/* Smarty version 4.3.4, created on 2024-06-03 22:51:32
   from 'D:\xampp\htdocs\fit-tracker\app\views\noteList_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665cd97f902237_11556862',
+  'unifunc' => 'content_665e2cd495d4a4_90982802',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26bef39b79965fc09b964cfbaacef5eb5ab0610e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\noteList_view.tpl',
-      1 => 1717360948,
+      1 => 1717447888,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665cd97f902237_11556862 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665e2cd495d4a4_90982802 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1019550974665cd97f8f1208_78055939', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_43555242665e2cd494bff7_48071168', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_1019550974665cd97f8f1208_78055939 extends Smarty_Internal_Block
+class Block_43555242665e2cd494bff7_48071168 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1019550974665cd97f8f1208_78055939',
+    0 => 'Block_43555242665e2cd494bff7_48071168',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -84,11 +84,11 @@ $_smarty_tpl->tpl_vars['n']->do_else = false;
 view_noteEdit/<?php echo $_smarty_tpl->tpl_vars['n']->value['idTrainingNote'];?>
 " class="btn btn-outline-info">Edytuj
               </a>
-              <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+              <button onclick="confirmLink('<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 noteDelete/<?php echo $_smarty_tpl->tpl_vars['n']->value['idTrainingNote'];?>
-" class="btn btn-outline-danger">
+', 'Czy na pewno chcesz usunąć notatkę?')" class="btn btn-outline-danger">
                 <i class="fa fa-trash color-danger"></i>
-              </a>
+              </button>
             </div>  
           </div>
         </div>

@@ -47,7 +47,7 @@ class MentorshipCtrl {
   
   public function action_requestDeny() {
     $idRequest = ParamUtils::getFromCleanURL(1);
-    $this->deleteRequest();
+    $this->deleteRequest($idRequest);
     App::getRouter()->redirectTo("view_requestList");
   }
 

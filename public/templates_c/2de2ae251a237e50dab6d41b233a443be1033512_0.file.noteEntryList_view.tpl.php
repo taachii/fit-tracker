@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-02 15:04:11
+/* Smarty version 4.3.4, created on 2024-06-03 23:01:23
   from 'D:\xampp\htdocs\fit-tracker\app\views\noteEntryList_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665c6dcb65fbe4_85872158',
+  'unifunc' => 'content_665e2f2332a682_07277631',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2de2ae251a237e50dab6d41b233a443be1033512' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\noteEntryList_view.tpl',
-      1 => 1717331988,
+      1 => 1717448480,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:head.tpl' => 1,
     'file:messages.tpl' => 1,
+    'file:required.tpl' => 1,
   ),
 ),false)) {
-function content_665c6dcb65fbe4_85872158 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665e2f2332a682_07277631 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
@@ -93,10 +94,10 @@ $_smarty_tpl->tpl_vars['e']->do_else = false;
 </td><td><span><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 view_noteEntryEdit/<?php echo $_smarty_tpl->tpl_vars['e']->value["idTrainingNote"];?>
 /<?php echo $_smarty_tpl->tpl_vars['e']->value["idNoteEntry"];?>
-" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj"><i class="fa fa-pencil"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-noteEntryDelete/<?php echo $_smarty_tpl->tpl_vars['e']->value["idTrainingNote"];?>
-/<?php echo $_smarty_tpl->tpl_vars['e']->value["idNoteEntry"];?>
-" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń"><i class="fa fa-close"></i></a></span></td></tr>
+" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj"><i class="fa fa-pencil"></i></a><a onclick="confirmLink('<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+noteEntryDelete/<?php echo $_smarty_tpl->tpl_vars['e']->value['idTrainingNote'];?>
+/<?php echo $_smarty_tpl->tpl_vars['e']->value['idNoteEntry'];?>
+', 'Czy na pewno chcesz usunąć wpis do notatki?')" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń"><i class="fa fa-close"></i></a></span></td></tr>
           <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
@@ -115,6 +116,8 @@ view_noteList">
     </div>
   </div>
   <?php }?>
+  <?php $_smarty_tpl->_subTemplateRender("file:required.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 </body>
 </div>
 </html><?php }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-02 18:16:19
+/* Smarty version 4.3.4, created on 2024-06-03 23:03:56
   from 'D:\xampp\htdocs\fit-tracker\app\views\roleList_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665c9ad3077ea2_24739620',
+  'unifunc' => 'content_665e2fbce75766_27797778',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e1e9fac9a762defd24f25a680b1932fadfaee44' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\roleList_view.tpl',
-      1 => 1717344978,
+      1 => 1717448632,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665c9ad3077ea2_24739620 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665e2fbce75766_27797778 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1486161437665c9ad3068326_51206962', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1361879081665e2fbce654a1_27772073', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_1486161437665c9ad3068326_51206962 extends Smarty_Internal_Block
+class Block_1361879081665e2fbce654a1_27772073 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1486161437665c9ad3068326_51206962',
+    0 => 'Block_1361879081665e2fbce654a1_27772073',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -91,9 +91,9 @@ view_roleEdit/<?php echo $_smarty_tpl->tpl_vars['r']->value["idRole"];?>
 roleDeactivate/<?php echo $_smarty_tpl->tpl_vars['r']->value["idRole"];?>
 " class="mr-4" data-toggle="tooltip" data-placement="top" title="Dezaktywuj"><i class="fa fa-close"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 roleActivate/<?php echo $_smarty_tpl->tpl_vars['r']->value["idRole"];?>
-" class="mr-4" data-toggle="tooltip" data-placement="top" title="Aktywuj"><i class="fa fa-check"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-roleDelete/<?php echo $_smarty_tpl->tpl_vars['r']->value["idRole"];?>
-" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń"><i class="fa fa-trash"></i></a></span></td></tr>
+" class="mr-4" data-toggle="tooltip" data-placement="top" title="Aktywuj"><i class="fa fa-check"></i></a><a onclick="confirmLink('<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+roleDelete/<?php echo $_smarty_tpl->tpl_vars['r']->value['idRole'];?>
+', 'Czy na pewno chcesz usunąć rolę?')" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń"><i class="fa fa-trash"></i></a></span></td></tr>
           <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>  

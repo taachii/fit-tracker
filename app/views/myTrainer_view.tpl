@@ -30,9 +30,9 @@
                         <div>
                           <a href="mailto:{$trainer['email']}" class="btn btn-outline-info btn-lg">Wyślij wiadomość
                           </a>
-                          <a href="{$conf->action_root}mentorshipEndTrainee/{$trainer['idUser']}" class="btn btn-outline-danger btn-lg"  data-toggle="tooltip" data-placement="top" title="Zakończ współpracę">
+                          <button onclick="confirmLink('{$conf->action_root}mentorshipEndTrainee/{$trainer['idUser']}', 'Czy na pewno chcesz zakończyć współpracę?')" class="btn btn-outline-danger btn-lg"  data-toggle="tooltip" data-placement="top" title="Zakończ współpracę">
                             <i class="fa fa-close color-danger"></i>
-                          </a>
+                          </button>
                         </div>  
                       </div>
                     </div>

@@ -3963,6 +3963,10 @@ input[type="button"].btn-block {
   font-size: 1.8em;
 }
 
+a[onclick]:hover{
+  cursor: pointer;
+}
+
 .homeScreen {
   display: flex;
   flex-direction: column;
@@ -8150,6 +8154,12 @@ a {
  body.auth {
   height: 100vh;
   overflow: hidden;
+ }
+
+ .pagination {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
  }
 
  .form-header {

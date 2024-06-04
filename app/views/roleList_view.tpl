@@ -51,7 +51,7 @@
                   <a href="{$conf->action_root}roleActivate/{$r["idRole"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Aktywuj">
                     <i class="fa fa-check"></i>
                   </a>
-                  <a href="{$conf->action_root}roleDelete/{$r["idRole"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń">
+                  <a onclick="confirmLink('{$conf->action_root}roleDelete/{$r['idRole']}', 'Czy na pewno chcesz usunąć rolę?')" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń">
                     <i class="fa fa-trash"></i>
                   </a>
                 </span>

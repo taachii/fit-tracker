@@ -61,7 +61,7 @@
                   <a href="{$conf->action_root}view_noteEntryEdit/{$e["idTrainingNote"]}/{$e["idNoteEntry"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edytuj">
                     <i class="fa fa-pencil"></i>
                   </a>
-                  <a href="{$conf->action_root}noteEntryDelete/{$e["idTrainingNote"]}/{$e["idNoteEntry"]}" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń">
+                  <a onclick="confirmLink('{$conf->action_root}noteEntryDelete/{$e['idTrainingNote']}/{$e['idNoteEntry']}', 'Czy na pewno chcesz usunąć wpis do notatki?')" class="mr-4" data-toggle="tooltip" data-placement="top" title="Usuń">
                     <i class="fa fa-close"></i>
                   </a>
                 </span>
@@ -83,6 +83,7 @@
     </div>
   </div>
   {/if}
+  {include file="required.tpl"}
 </body>
 </div>
 </html>

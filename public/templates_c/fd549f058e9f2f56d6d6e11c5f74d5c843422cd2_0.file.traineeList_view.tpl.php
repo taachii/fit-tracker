@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-06-03 16:49:07
+/* Smarty version 4.3.4, created on 2024-06-03 23:06:54
   from 'D:\xampp\htdocs\fit-tracker\app\views\traineeList_view.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_665dd7e3788829_91556837',
+  'unifunc' => 'content_665e306e3110a1_10393949',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fd549f058e9f2f56d6d6e11c5f74d5c843422cd2' => 
     array (
       0 => 'D:\\xampp\\htdocs\\fit-tracker\\app\\views\\traineeList_view.tpl',
-      1 => 1717425710,
+      1 => 1717448769,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_665dd7e3788829_91556837 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665e306e3110a1_10393949 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1774167086665dd7e377bd87_48176134', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1598233518665e306e304494_58497488', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_1774167086665dd7e377bd87_48176134 extends Smarty_Internal_Block
+class Block_1598233518665e306e304494_58497488 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1774167086665dd7e377bd87_48176134',
+    0 => 'Block_1598233518665e306e304494_58497488',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -88,9 +88,9 @@ $_smarty_tpl->tpl_vars['t']->do_else = false;
 </td><td><?php echo $_smarty_tpl->tpl_vars['t']->value['startDate'];?>
 </td><td><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 view_traineeNoteList/<?php echo $_smarty_tpl->tpl_vars['t']->value['idUser'];?>
-" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wyświetl notatki"><i class="fa fa-eye"></i></a><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+" class="mr-4" data-toggle="tooltip" data-placement="top" title="Wyświetl notatki"><i class="fa fa-eye"></i></a><a onclick="confirmLink('<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 mentorshipEndTrainer/<?php echo $_smarty_tpl->tpl_vars['t']->value['idUser'];?>
-" class="mr-4" data-toggle="tooltip" data-placement="top" title="Zakończ współpracę"><i class="fa fa-close"></i></a><a href="mailto:<?php echo $_smarty_tpl->tpl_vars['t']->value['email'];?>
+', 'Czy na pewno chcesz zakończyć współpracę?')" class="mr-4" data-toggle="tooltip" data-placement="top" title="Zakończ współpracę"><i class="fa fa-close"></i></a><a href="mailto:<?php echo $_smarty_tpl->tpl_vars['t']->value['email'];?>
 " class="mr-4" data-toggle="tooltip" data-placement="top" title="Wyślij wiadomość"><i class="fa fa-inbox"></i></a></td></tr>
           <?php
 }

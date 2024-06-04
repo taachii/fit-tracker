@@ -6,7 +6,7 @@ use core\Utils;
 $everyRole = ['admin', 'trainee', 'trainer'];
 
 # Akcja domyslna
-App::getRouter()->setDefaultRoute('view_home');
+App::getRouter()->setDefaultRoute('logout');
 
 # Akcja na ktora przekierowany jest uzytkownik jesli nie ma uprawnien
 App::getRouter()->setLoginRoute('view_error403'); 
@@ -20,11 +20,11 @@ Utils::addRoute('register', 'RegisterCtrl');
 
 # Akcje zwiazane z glowna czescia aplikacji
 Utils::addRoute('view_error403', 'HomeCtrl');
-Utils::addRoute('view_home', 'HomeCtrl', $everyRole);
 
   # Akcje zwiazane z uzytkownikami
   Utils::addRoute('view_userList', 'UserListCtrl', ['admin']);
   Utils::addRoute('view_userEdit', 'UserEditCtrl', ['admin']);
+  Utils::addRoute('userListPart', 'UserListCtrl', ['admin']);
   Utils::addRoute('userDeactivate', 'UserEditCtrl', ['admin']);
   Utils::addRoute('userActivate', 'UserEditCtrl', ['admin']);
   Utils::addRoute('userSave', 'UserEditCtrl', ['admin']);
@@ -68,6 +68,7 @@ Utils::addRoute('view_home', 'HomeCtrl', $everyRole);
 
   # Akcje zwiazane z trenerami
   Utils::addRoute('view_trainerList', 'TrainerListCtrl', ['admin', 'trainee']);
+  Utils::addRoute('trainerListPart', 'TrainerListCtrl', ['admin', 'trainee']);
 
   # Akcje zwiazane z podopiecznymi
   Utils::addRoute('view_traineeList', 'TraineeListCtrl', ['trainer']);
